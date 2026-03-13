@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PARK ROCHE SEOUL ONE — 공식 분양 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════
+   PARK ROCHE SEOUL ONE  ·  BLUE SPRING EDITION 2026
+   Palette: Pure White · Sky · Deep Blue · Sakura · Navy
+   Senior-readable: base 20px, weight 400+, line-height 1.9
+═══════════════════════════════════════════════════ */
+
+:root {
+  /* ── PURE WHITE BASE ── */
+  --white:       #ffffff;
+  --fafcff:      #fafcff;
+  --f5f9ff:      #f5f9ff;
+  --ice:         #eef4fb;
+
+  /* ── BLUE SYSTEM ── */
+  --sky:         #87ceeb;
+  --sky-lt:      #b8dff2;
+  --blue:        #3b8fd9;
+  --deep-blue:   #1a4fa0;
+  --navy:        #091a42;
+  --dark-2:      #0f1f35;
+
+  /* ── SPRING ACCENTS ── */
+  --sakura:      #f7bcd4;
+  --sakura-deep: #e8829a;
+  --spring-green:#8fbc6a;
+  --spring-mint: #b8e8d0;
+  --azalea:      #d4547a;
+  --lilac:       #b89dce;
+
+  /* ── SEMANTIC ── */
+  --bg:          var(--fafcff);
+  --bg-2:        var(--f5f9ff);
+  --bg-3:        var(--ice);
+  --surface:     var(--white);
+  --border:      rgba(26,79,160,.10);
+  --border-med:  rgba(26,79,160,.18);
+  --border-strong:rgba(26,79,160,.30);
+  --txt:         var(--navy);
+  --txt-80:      rgba(9,26,66,.82);
+  --txt-60:      rgba(9,26,66,.62);
+  --txt-40:      rgba(9,26,66,.44);
+
+  /* ── ACCENT SHORTHAND ── */
+  --accent:      var(--blue);
+  --accent-lt:   var(--sky);
+  --accent-dk:   var(--deep-blue);
+
+  /* ── TYPE ── */
+  --f-serif: 'Noto Serif KR', 'Georgia', serif;
+  --f-sans:  'Noto Sans KR', sans-serif;
+  --f-mono:  'IBM Plex Mono', monospace;
+
+  /* ── MOTION ── */
+  --spring: cubic-bezier(.16,1,.3,1);
+  --smooth: cubic-bezier(.65,0,.35,1);
+}
+
+/* ── KEYFRAMES ── */
+@keyframes float       { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes scan        { 0%{top:-2px;opacity:.7} 100%{top:100%;opacity:0} }
+@keyframes ticker      { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes fadeUp      { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes shimmer     { 0%{background-position:-200% center} 100%{background-position:200% center} }
+@keyframes rotate-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes loadBar     { to{width:100%} }
+@keyframes bar-grow    { from{width:0} }
+@keyframes countUp     { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes drift       { 0%,100%{transform:translateX(0) translateY(0)} 33%{transform:translateX(18px) translateY(-12px)} 66%{transform:translateX(-10px) translateY(16px)} }
+@keyframes driftB      { 0%,100%{transform:translateX(0) translateY(0)} 50%{transform:translateX(-22px) translateY(14px)} }
+@keyframes pulse-ring  { 0%,100%{box-shadow:0 0 0 0 rgba(59,143,217,.3)} 60%{box-shadow:0 0 0 12px rgba(59,143,217,0)} }
+@keyframes petal-fall  { 0%{opacity:0;transform:translateY(-10px) rotate(0deg)} 15%{opacity:.55} 100%{opacity:0;transform:translateY(90px) rotate(220deg)} }
+@keyframes grain-move  { 0%{transform:translate(0,0)} 25%{transform:translate(-2%,-1%)} 50%{transform:translate(1%,2%)} 75%{transform:translate(-1%,1%)} 100%{transform:translate(0,0)} }
+@keyframes loader-exit { from{transform:translateY(0)} to{transform:translateY(-100%)} }
+@keyframes text-reveal { from{transform:translateY(100%)} to{transform:translateY(0)} }
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:20px;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg);
+  color:var(--navy);
+  font-family:var(--f-sans);
+  font-weight:400;
+  line-height:1.9;
+  overflow-x:hidden;
+  cursor:none;
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;border:none;background:none;cursor:none}
+img{display:block;max-width:100%}
+
+/* ── MESH BACKGROUND ── */
+.mesh-bg{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  overflow:hidden;
+}
+.mesh-blob{
+  position:absolute;border-radius:50%;filter:blur(80px);opacity:0.065;
+}
+.blob-1{
+  width:700px;height:700px;background:var(--blue);
+  top:-15%;left:-10%;
+  animation:drift 22s ease-in-out infinite;
+}
+.blob-2{
+  width:550px;height:550px;background:var(--sakura);
+  bottom:-10%;right:-5%;
+  animation:driftB 18s ease-in-out infinite;
+}
+.blob-3{
+  width:450px;height:450px;background:var(--spring-green);
+  top:40%;left:55%;
+  animation:drift 26s ease-in-out infinite reverse;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after{
+  content:'';
+  position:fixed;inset:0;z-index:9997;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity:.025;
+  mix-blend-mode:multiply;
+  animation:grain-move 0.4s steps(1) infinite;
+}
+
+/* ── CUSTOM CURSOR (desktop only) ── */
+@media(hover:none){#C-DOT,#C-RING{display:none!important}body,button{cursor:auto!important}}
+#C-DOT{
+  position:fixed;z-index:9999;pointer-events:none;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--blue);
+  transform:translate(-50%,-50%);
+  transition:width .22s var(--spring),height .22s var(--spring),background .22s;
+}
+#C-RING{
+  position:fixed;z-index:9998;pointer-events:none;
+  width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(59,143,217,.38);
+  transform:translate(-50%,-50%);
+  transition:width .3s var(--spring),height .3s var(--spring),border-color .22s;
+}
+
+/* ── CINEMATIC LOADER ── */
+#LOADER{
+  position:fixed;inset:0;z-index:9500;
+  background:var(--navy);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+#LOADER.hide{
+  animation:loader-exit .9s var(--smooth) forwards;
+  pointer-events:none;
+}
+#LOADER.hide::after{display:none}
+.ld-grain{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  opacity:.06;mix-blend-mode:screen;
+}
+.ld-inner{position:relative;z-index:1;text-align:center}
+.ld-overflow{overflow:hidden;margin-bottom:4px}
+.ld-brand{
+  font-family:var(--f-serif);font-size:1.6rem;letter-spacing:.48em;
+  color:var(--white);font-weight:300;
+  transform:translateY(100%);
+  animation:text-reveal .9s .2s var(--spring) forwards;
+  display:block;
+}
+.ld-overflow-sub{overflow:hidden;margin-bottom:56px}
+.ld-sub{
+  font-family:var(--f-mono);font-size:.56rem;letter-spacing:.36em;
+  text-transform:uppercase;color:rgba(255,255,255,.35);
+  transform:translateY(100%);
+  animation:text-reveal .9s .45s var(--spring) forwards;
+  display:block;
+}
+.ld-num-wrap{
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;
+  color:rgba(255,255,255,.3);margin-bottom:18px;
+  transform:translateY(100%);
+  animation:text-reveal .9s .6s var(--spring) forwards;
+  overflow:hidden;
+}
+#LD-PERCENT{color:rgba(135,206,235,.7)}
+.ld-track{width:200px;height:1px;background:rgba(255,255,255,.08);margin:0 auto}
+.ld-fill{height:100%;width:0;background:linear-gradient(90deg,var(--deep-blue),var(--blue),var(--sky));animation:loadBar 2.4s var(--spring) forwards}
+
+/* ── SCROLL PROGRESS BAR ── */
+#SCROLL-PROG{
+  position:fixed;top:0;left:0;z-index:900;
+  height:2px;width:0%;
+  background:linear-gradient(90deg,var(--deep-blue),var(--blue),var(--sky));
+  transition:width .1s linear;
+  pointer-events:none;
+}
+
+/* ── STICKY NAV ── */
+#NAV{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  height:78px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;
+  transition:background .4s ease,border-color .4s ease,box-shadow .4s ease;
+}
+#NAV.scrolled{
+  background:rgba(250,252,255,.92);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 40px rgba(9,26,66,.06);
+}
+.nav-logo{display:flex;flex-direction:column;gap:3px;cursor:pointer}
+.nav-logo-main{
+  font-family:var(--f-serif);font-size:1rem;letter-spacing:.38em;
+  color:var(--navy);font-weight:500;transition:color .22s;
+}
+#NAV:not(.scrolled) .nav-logo-main{color:var(--white)}
+#NAV:not(.scrolled) .nav-logo-sub{color:rgba(255,255,255,.4)}
+.nav-logo:hover .nav-logo-main{color:var(--blue) !important}
+.nav-logo-sub{
+  font-family:var(--f-mono);font-size:.5rem;letter-spacing:.38em;
+  text-transform:uppercase;color:var(--txt-40);
+}
+.nav-links{display:flex;gap:28px}
+.nav-links button{
+  font-family:var(--f-sans);font-size:.78rem;letter-spacing:.06em;font-weight:400;
+  color:rgba(255,255,255,.72);transition:color .22s;
+  position:relative;padding-bottom:4px;
+}
+#NAV.scrolled .nav-links button{color:var(--txt-60)}
+.nav-links button::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:1px;background:var(--blue);
+  transition:width .32s var(--spring);
+}
+.nav-links button:hover,
+.nav-links button.on{color:var(--navy) !important}
+#NAV:not(.scrolled) .nav-links button.on{color:var(--white) !important}
+.nav-links button:hover::after,
+.nav-links button.on::after{width:100%}
+.nav-cta{
+  font-family:var(--f-sans);font-size:.78rem;letter-spacing:.08em;font-weight:500;
+  padding:11px 26px;
+  border:1.5px solid rgba(255,255,255,.5);color:rgba(255,255,255,.95);
+  transition:background .26s,color .26s,border-color .26s;
+  border-radius:2px;
+  position:relative;overflow:hidden;
+}
+#NAV.scrolled .nav-cta{border-color:var(--navy);color:var(--navy)}
+.nav-cta:hover{background:var(--navy) !important;color:var(--white) !important;border-color:var(--navy) !important}
+.nav-cta::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  transition:left .6s var(--spring);
+}
+.nav-cta:hover::after{left:150%}
+
+/* ── TICKER ── */
+#TICKER{
+  position:relative;z-index:700;
+  margin-top:78px;
+  background:var(--dark-2);
+  height:42px;display:flex;align-items:center;overflow:hidden;
+}
+.tk-badge{
+  flex-shrink:0;height:100%;padding:0 20px;
+  display:flex;align-items:center;gap:8px;
+  background:var(--blue);
+  font-family:var(--f-mono);font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--white);font-weight:400;
+}
+.tk-dot{width:5px;height:5px;border-radius:50%;background:var(--sky);animation:pulse-ring 2s infinite}
+.tk-track{display:flex;white-space:nowrap;animation:ticker 44s linear infinite}
+.tk-track span{
+  font-family:var(--f-mono);font-size:.58rem;letter-spacing:.12em;
+  color:rgba(255,255,255,.4);padding:0 32px;
+}
+.tk-track .t-blue{color:rgba(135,206,235,.75)}
+.tk-track .t-sakura{color:rgba(247,188,212,.7)}
+.tk-track .t-green{color:rgba(143,188,106,.7)}
+
+/* ── PAGES ── */
+.PAGE{display:none}
+.PAGE.visible{display:block;animation:pageIn .55s var(--spring)}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+#HERO{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+  background:var(--dark-2);
+}
+.h-photo{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('img/hero-main.jpg');
+  background-size:cover;background-position:center 30%;
+  opacity:.68;
+  animation:hero-zoom 22s ease-in-out infinite alternate;
+}
+.h-overlay{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(165deg,rgba(9,13,26,.72) 0%,rgba(9,26,66,.55) 52%,rgba(26,79,160,.28) 100%);
+}
+@keyframes hero-zoom{from{transform:scale(1.06)}to{transform:scale(1.00)}}
+.h-stars{
+  position:absolute;inset:0;z-index:1;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1px 1px at 28% 72%,rgba(135,206,235,.5),transparent),
+    radial-gradient(1.5px 1.5px at 55% 33%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1px 1px at 78% 58%,rgba(247,188,212,.45),transparent),
+    radial-gradient(1.5px 1.5px at 88% 22%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1px 1px at 42% 85%,rgba(135,206,235,.4),transparent);
+}
+.h-grid{
+  position:absolute;inset:0;z-index:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:88px 88px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 80%);
+}
+.h-geo{position:absolute;border-radius:50%;border:1px solid rgba(135,206,235,.08);z-index:2}
+.hg1{width:660px;height:660px;top:-160px;right:-100px;animation:drift 24s ease-in-out infinite}
+.hg2{width:380px;height:380px;top:18%;right:6%;animation:driftB 32s ease-in-out infinite reverse}
+.hg3{width:220px;height:220px;bottom:18%;right:22%;animation:rotate-slow 42s linear infinite;border-style:dashed;border-color:rgba(59,143,217,.07)}
+.h-vline{position:absolute;top:0;bottom:0;width:1px;z-index:2;background:linear-gradient(to bottom,transparent 5%,rgba(135,206,235,.14) 40%,rgba(135,206,235,.14) 70%,transparent 95%)}
+.hvl-1{left:56px}.hvl-2{right:56px}
+.h-scan{position:absolute;left:0;right:0;height:1px;z-index:2;background:linear-gradient(90deg,transparent,rgba(135,206,235,.18),transparent);animation:scan 11s linear infinite}
+
+.h-body{
+  position:relative;z-index:3;
+  padding:0 80px 120px;max-width:900px;
+}
+.h-label{
+  display:flex;align-items:center;gap:16px;
+  font-family:var(--f-mono);font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--sky);margin-bottom:32px;
+  opacity:0;animation:fadeUp .9s .3s var(--spring) forwards;
+}
+.h-label::before{content:'';width:38px;height:1px;background:var(--sky)}
+.h-h1{
+  font-family:var(--f-serif);
+  font-size:clamp(3.4rem,7.5vw,7rem);
+  font-weight:300;line-height:1.04;
+  color:var(--white);margin-bottom:18px;
+  opacity:0;animation:fadeUp .9s .5s var(--spring) forwards;
+  letter-spacing:-.01em;
+}
+.h-h1 .shimmer{
+  background:linear-gradient(90deg,#c8e8f8 0%,var(--blue) 25%,var(--sky) 50%,var(--sakura) 70%,#e8f4fc 90%,var(--sky) 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 5s linear infinite;
+}
+.h-h1 em{font-style:italic;-webkit-text-fill-color:rgba(255,255,255,.45)}
+.h-sub{
+  font-family:var(--f-serif);font-size:1rem;font-weight:300;
+  letter-spacing:.16em;color:rgba(255,255,255,.65);margin-bottom:20px;
+  opacity:0;animation:fadeUp .9s .66s var(--spring) forwards;
+}
+.h-tagline{
+  font-family:var(--f-sans);font-size:.88rem;font-weight:300;
+  letter-spacing:.06em;line-height:2.2;
+  color:rgba(255,255,255,.42);margin-bottom:56px;
+  border-left:1px solid rgba(135,206,235,.3);padding-left:24px;
+  opacity:0;animation:fadeUp .9s .8s var(--spring) forwards;
+}
+.h-btns{
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .9s .95s var(--spring) forwards;
+}
+
+/* Hero floating widget */
+.h-widget{
+  position:absolute;right:80px;top:50%;transform:translateY(-52%);
+  z-index:4;width:236px;
+  background:rgba(9,26,66,.7);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(135,206,235,.18);
+  box-shadow:0 28px 64px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.15);
+  animation:float 7s ease-in-out infinite,fadeUp 1s 1.2s var(--spring) both;
+}
+.hw-top{
+  padding:14px 18px;border-bottom:1px solid rgba(135,206,235,.12);
+  display:flex;align-items:center;gap:10px;
+}
+.hw-dot{width:6px;height:6px;border-radius:50%;background:var(--spring-green);animation:pulse-ring 2.4s infinite}
+.hw-title{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sky)}
+.hw-inner{padding:16px 18px}
+.hw-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:9px 0;border-bottom:1px solid rgba(135,206,235,.08);
+}
+.hw-row:last-of-type{border-bottom:none}
+.hw-lbl{font-family:var(--f-mono);font-size:.56rem;letter-spacing:.08em;color:rgba(255,255,255,.35)}
+.hw-val{font-family:var(--f-serif);font-size:.92rem;color:var(--white);font-weight:400}
+.hw-val.g{color:var(--spring-green)}
+.hw-val.b{color:var(--sky)}
+.hw-bar-bg{height:2px;background:rgba(255,255,255,.08);margin-top:14px}
+.hw-bar-fill{height:100%;width:86%;background:linear-gradient(90deg,var(--deep-blue),var(--blue),var(--sky));animation:bar-grow 2.2s 1.8s var(--spring) both}
+
+/* Hero bottom stats */
+.h-stats{
+  position:absolute;bottom:120px;right:80px;z-index:3;
+  display:flex;gap:36px;
+  opacity:0;animation:fadeUp .9s 1.3s var(--spring) forwards;
+}
+.hs-n{font-family:var(--f-serif);font-size:2.4rem;color:var(--white);font-weight:300;line-height:1}
+.hs-l{font-family:var(--f-mono);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-top:6px}
+.hs-sep{width:1px;background:rgba(255,255,255,.12);align-self:stretch}
+
+/* Scroll cue */
+.h-scroll{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:fadeUp .9s 1.5s var(--spring) forwards;
+}
+.hs-txt{font-family:var(--f-mono);font-size:.5rem;letter-spacing:.32em;color:rgba(255,255,255,.28);text-transform:uppercase}
+.hs-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(135,206,235,.55),transparent);animation:scan 3s ease-in-out infinite}
+#PETALS{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+
+/* ── BUTTONS ── */
+.BTN-BLUE{
+  font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:15px 40px;
+  background:var(--blue);color:var(--white);
+  display:inline-block;position:relative;overflow:hidden;
+  transition:transform .28s var(--spring),box-shadow .28s,background .26s;
+}
+.BTN-BLUE::before{
+  content:'';position:absolute;top:50%;left:50%;width:0;height:0;
+  background:rgba(255,255,255,.15);border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width .6s var(--spring),height .6s var(--spring),opacity .4s;
+}
+.BTN-BLUE:hover::before{width:200%;height:200%;opacity:0}
+.BTN-BLUE:hover{background:var(--deep-blue);transform:translateY(-2px);box-shadow:0 18px 44px rgba(26,79,160,.32)}
+.BTN-LINE{
+  font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:14px 32px;
+  border:1px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);
+  display:inline-block;
+  transition:border-color .26s,color .26s,background .26s;
+}
+.BTN-LINE:hover{border-color:var(--white);color:var(--white);background:rgba(255,255,255,.07)}
+.BTN-INK{
+  font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:15px 40px;
+  background:var(--navy);color:var(--white);
+  display:inline-block;position:relative;overflow:hidden;
+  transition:transform .28s var(--spring),box-shadow .28s;
+}
+.BTN-INK:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(9,26,66,.2)}
+.BTN-LINE-DARK{
+  font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:14px 32px;
+  border:1px solid var(--border-strong);color:var(--navy);
+  display:inline-block;
+  transition:border-color .26s,color .26s;
+}
+.BTN-LINE-DARK:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── STATS BAND ── */
+#STATS-BAND{
+  background:var(--navy);
+  padding:52px;
+}
+.sb-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06)}
+.sb-cell{
+  padding:36px 24px;text-align:center;
+  background:var(--navy);position:relative;overflow:hidden;
+}
+.sb-cell::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue),transparent);
+  opacity:0;transition:opacity .4s;
+}
+.sb-cell:hover::before{opacity:1}
+.sb-cell:hover .sb-num{color:var(--sky)}
+.sb-num{transition:color .3s}
+.sb-num{
+  font-family:var(--f-serif);font-size:3rem;font-weight:300;
+  color:var(--white);line-height:1;margin-bottom:10px;
+}
+.sb-en{font-family:var(--f-sans);font-size:.82rem;font-weight:400;color:rgba(255,255,255,.65);margin-top:8px}
+.sb-kr{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.12em;color:rgba(255,255,255,.32);margin-top:4px}
+
+#MENU{padding:88px 52px;background:var(--bg-2);border-top:4px solid var(--blue)}
+.menu-wrap{max-width:1180px;margin:0 auto}
+.menu-head{text-align:center;margin-bottom:64px}
+.mh-label{
+  font-family:var(--f-mono);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+}
+.mh-label::before,.mh-label::after{content:'';width:32px;height:1px;background:var(--blue)}
+.mh-h2{font-family:var(--f-serif);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;color:var(--navy);margin-bottom:14px}
+.mh-sub{font-family:var(--f-sans);font-size:.96rem;font-weight:400;color:var(--txt-60);letter-spacing:.04em}
+
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.mc{
+  background:var(--white);padding:48px 40px;position:relative;overflow:hidden;
+  transition:transform .38s var(--spring),background .3s,box-shadow .38s var(--spring);
+  cursor:pointer;display:block;border:none;text-align:left;
+}
+.mc::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--sky));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .42s var(--spring);
+}
+.mc:hover{transform:translateY(-8px);background:var(--fafcff);box-shadow:0 20px 50px rgba(9,26,66,.10)}
+.mc:hover::after{transform:scaleX(1)}
+.mc:hover .mc-arr{opacity:1;transform:translateX(6px)}
+.mc-num{font-family:var(--f-mono);font-size:3.2rem;color:rgba(26,79,160,.06);line-height:1;margin-bottom:20px;font-weight:300;transition:color .3s}
+.mc:hover .mc-num{color:rgba(59,143,217,.10)}
+.mc-en{font-family:var(--f-serif);font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:6px;line-height:1.2}
+.mc-kr{font-family:var(--f-sans);font-size:1rem;font-weight:400;color:var(--txt-60);margin-bottom:18px;letter-spacing:.04em}
+.mc-desc{font-family:var(--f-sans);font-size:.88rem;font-weight:300;line-height:2.0;color:var(--txt-60)}
+.mc-arr{font-family:var(--f-sans);font-size:.84rem;font-weight:500;letter-spacing:.06em;color:var(--blue);opacity:0;transition:opacity .28s,transform .28s var(--spring);margin-top:22px;display:block}
+
+/* ── OVERVIEW ── */
+#OV{background:var(--white);padding:108px 52px}
+.ov-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:88px;align-items:start}
+.ov-label{
+  font-family:var(--f-mono);font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:24px;display:flex;align-items:center;gap:14px;
+}
+.ov-label::before{content:'';width:32px;height:1px;background:var(--blue)}
+.ov-h2{font-family:var(--f-serif);font-size:clamp(2.2rem,3.8vw,3.4rem);font-weight:300;color:var(--navy);margin-bottom:44px;line-height:1.25}
+.ov-h2 em{font-style:italic;color:var(--blue)}
+.ov-table{width:100%;border-collapse:collapse}
+.ov-tr{border-bottom:1px solid var(--border)}
+.ov-tr:first-child{border-top:1px solid var(--border)}
+.ov-th{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-40);padding:20px 0;width:160px;vertical-align:top}
+.ov-td{font-family:var(--f-sans);font-size:.9rem;font-weight:400;color:var(--txt-80);padding:20px 0 20px 20px;line-height:2}
+.ov-td strong{color:var(--navy);font-weight:500}
+.ov-note{margin-top:22px;font-family:var(--f-mono);font-size:.58rem;line-height:2.1;color:var(--txt-40)}
+.ov-panel{
+  background:var(--bg-3);border:1px solid var(--border-med);
+  padding:52px 44px;position:relative;
+}
+.ov-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep-blue),var(--sky))}
+.ov-panel-title{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:44px;text-align:center}
+.ov-stat{text-align:center;padding:28px 0;border-bottom:1px solid var(--border)}
+.ov-stat:last-child{border-bottom:none}
+.ov-stat-n{font-family:var(--f-serif);font-size:3.4rem;color:var(--navy);line-height:1;font-weight:300}
+.ov-stat-l{font-family:var(--f-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt-40);margin-top:8px}
+
+/* ── SECTION COMMONS ── */
+.SEC{padding:100px 52px}
+.SEC-WHITE  {background:var(--white)}
+.SEC-BG     {background:var(--bg)}
+.SEC-BG2    {background:var(--bg-2)}
+.SEC-BG3    {background:var(--bg-3)}
+.SEC-NAVY   {background:var(--navy)}
+.SEC-DARK   {background:var(--dark-2)}
+.WRAP{max-width:1180px;margin:0 auto}
+.WRAP-SM{max-width:880px;margin:0 auto}
+.COL2{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.COL2-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
+.sec-lbl{
+  font-family:var(--f-mono);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:18px;display:flex;align-items:center;gap:14px;
+}
+.sec-lbl::before{content:'';width:32px;height:1px;background:var(--blue)}
+.sec-h2{font-family:var(--f-serif);font-size:clamp(2rem,3.8vw,3.2rem);font-weight:300;color:var(--navy);line-height:1.25;margin-bottom:14px}
+.sec-h2 em{font-style:italic;color:var(--blue)}
+.sec-body{font-family:var(--f-sans);font-size:.9rem;font-weight:300;line-height:2.4;color:var(--txt-60)}
+
+/* ── PHOTO GALLERY STRIP ── */
+#PHOTO-STRIP{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  height:420px;gap:4px;background:var(--dark-2);
+}
+.ps-cell{
+  position:relative;overflow:hidden;cursor:zoom-in;
+}
+.ps-cell img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s var(--spring),filter .4s;
+  filter:brightness(.88) saturate(.92);
+}
+.ps-cell:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.1)}
+.ps-cell::after{
+  content:attr(data-label);
+  position:absolute;bottom:0;left:0;right:0;
+  padding:32px 20px 18px;
+  background:linear-gradient(to top,rgba(9,26,66,.75),transparent);
+  font-family:var(--f-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.8);
+  transform:translateY(6px);opacity:0;transition:opacity .35s,transform .35s;
+}
+.ps-cell:hover::after{opacity:1;transform:translateY(0)}
+
+/* ── PAGE BANNERS WITH PHOTOS ── */
+.pb-photo{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:center;
+  opacity:.42;
+}
+.pb-overlay{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(to bottom,rgba(9,26,66,.85),rgba(9,26,66,.6));
+}
+
+/* ── WELLNESS PHOTO ── */
+.well-photo-box{
+  aspect-ratio:4/5;position:relative;overflow:hidden;
+}
+.well-photo-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--spring)}
+.well-photo-box:hover img{transform:scale(1.04)}
+.well-photo-box::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(9,26,66,.35),transparent 60%);z-index:1}
+
+/* ── PAGE BANNER CSS fix ── */
+.page-banner{position:relative;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;margin-top:78px;background:var(--navy)}
+.pb-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:72px 72px;
+}
+.pb-scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(135,206,235,.25),transparent);animation:scan 9s linear infinite}
+.pb-content{position:relative;z-index:2;text-align:center}
+.pb-label{
+  font-family:var(--f-mono);font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;
+  color:var(--sky);margin-bottom:18px;
+  opacity:0;animation:fadeUp .8s .2s var(--spring) forwards;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.pb-label::before,.pb-label::after{content:'';width:26px;height:1px;background:var(--sky)}
+.pb-title{font-family:var(--f-serif);font-size:clamp(2.5rem,5.5vw,5rem);font-weight:300;color:var(--white);opacity:0;animation:fadeUp .8s .38s var(--spring) forwards}
+.pb-title em{font-style:italic;color:var(--sky)}
+.pb-sub{font-family:var(--f-sans);font-size:.86rem;font-weight:300;letter-spacing:.14em;color:rgba(255,255,255,.45);margin-top:14px;opacity:0;animation:fadeUp .8s .55s var(--spring) forwards}
+
+/* ── SUB TABS ── */
+.sub-tab-bar{
+  background:var(--white);border-bottom:1px solid var(--border);
+  display:flex;justify-content:center;overflow-x:auto;
+  position:sticky;top:78px;z-index:600;
+}
+.sub-tab-bar button{
+  font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--txt-40);padding:18px 28px;
+  border-right:1px solid var(--border);flex-shrink:0;
+  transition:color .22s,background .22s;
+  position:relative;
+}
+.sub-tab-bar button:first-child{border-left:1px solid var(--border)}
+.sub-tab-bar button:hover{color:var(--navy);background:var(--bg)}
+.sub-tab-bar button.on{color:var(--blue)}
+.sub-tab-bar button.on::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;
+  background:var(--blue);
+}
+[data-tab-panel]{transition:opacity .4s var(--spring)}
+[data-tab-panel].tab-hidden{display:none}
+
+/* ── TIMELINE ── */
+.tl-wrap{position:relative;max-width:780px;margin:0 auto}
+.tl-wrap::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--border-med),var(--border-med),transparent);
+  transform:translateX(-50%);
+}
+.tl-item{display:grid;grid-template-columns:1fr 36px 1fr;gap:0;align-items:center;margin-bottom:48px}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);margin:0 auto;box-shadow:0 0 0 4px rgba(59,143,217,.12)}
+.tl-dot.special{background:var(--sakura-deep);box-shadow:0 0 0 5px rgba(232,130,154,.15)}
+.ti-r{padding-left:34px}
+.ti-l{padding-right:34px;text-align:right}
+.ti-year{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.18em;color:var(--blue);margin-bottom:6px}
+.ti-year.accent{color:var(--sakura-deep)}
+.ti-title{font-family:var(--f-serif);font-size:1.05rem;font-weight:400;color:var(--navy);margin-bottom:7px}
+.ti-body{font-family:var(--f-sans);font-size:.8rem;font-weight:300;color:var(--txt-60);line-height:2.1}
+
+/* ── BIG QUOTE ── */
+.BIG-QUOTE{padding:100px 52px;text-align:center;background:var(--bg-3)}
+.bq-mark{font-family:var(--f-serif);font-size:7rem;line-height:.5;color:rgba(59,143,217,.12);display:block;margin-bottom:28px}
+.bq-text{font-family:var(--f-serif);font-size:clamp(1.4rem,2.6vw,2.1rem);font-style:italic;font-weight:300;color:var(--txt-80);line-height:1.85;margin-bottom:28px}
+.bq-attr{display:inline-flex;align-items:center;gap:16px}
+.bq-line{width:36px;height:1px;background:var(--blue)}
+.bq-name{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.12em;color:var(--blue)}
+
+/* ── ARCH KPI ── */
+.arch-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:36px;background:var(--border)}
+.arch-kpi{background:var(--white);padding:30px 22px;text-align:center;transition:background .26s}
+.arch-kpi:hover{background:var(--bg)}
+.ak-n{font-family:var(--f-serif);font-size:2.8rem;font-weight:300;color:var(--navy);line-height:1;margin-bottom:10px}
+.ak-l{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-40)}
+
+/* ── FLOOR PLANS ── */
+.fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.fp-card{
+  background:var(--white);padding:42px 36px;
+  position:relative;overflow:hidden;
+  transition:background .3s,transform .38s var(--spring);
+}
+.fp-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep-blue),var(--sky))}
+.fp-card:hover{background:var(--bg);transform:translateY(-5px)}
+.fp-type{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;color:var(--txt-40)}
+.fp-area{font-family:var(--f-serif);font-size:3rem;font-weight:300;line-height:1;color:var(--navy)}
+.fp-area span{font-size:1.2rem}
+.fp-desc{font-family:var(--f-sans);font-size:.8rem;font-weight:300;color:var(--txt-60);line-height:2.1;margin-top:14px}
+.fp-score{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--f-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-40)}
+.tag-pill{display:inline-block;font-family:var(--f-mono);font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;margin-left:8px;border-radius:2px}
+.tag-hot{background:rgba(212,84,122,.1);border:1px solid rgba(212,84,122,.22);color:var(--azalea)}
+.tag-new{background:rgba(143,188,106,.1);border:1px solid rgba(143,188,106,.22);color:var(--spring-green)}
+.tag-vip{background:rgba(59,143,217,.1);border:1px solid rgba(59,143,217,.2);color:var(--blue)}
+
+/* ── WELLNESS PILLARS ── */
+.wl-pillar{
+  background:var(--white);padding:48px 38px;
+  transition:background .3s,transform .38s var(--spring);
+  position:relative;
+}
+.wl-pillar::after{
+  content:'';position:absolute;bottom:0;left:38px;right:38px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blue),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.wl-pillar:hover{background:var(--bg);transform:translateY(-5px)}
+.wl-pillar:hover::after{opacity:1}
+.wp-icon{width:48px;height:48px;margin-bottom:22px}
+.wp-title{font-family:var(--f-serif);font-size:1.22rem;font-weight:400;color:var(--navy);margin-bottom:12px}
+.wp-body{font-family:var(--f-sans);font-size:.82rem;font-weight:300;line-height:2.2;color:var(--txt-60)}
+
+/* ── AI DUAL PANEL ── */
+.ai-duel{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.ai-panel{
+  background:var(--white);padding:48px 44px;
+  transition:background .3s;
+}
+.ai-panel.left{transform:translateX(-30px);opacity:0;transition:transform .9s var(--spring),opacity .9s var(--spring)}
+.ai-panel.right{transform:translateX(30px);opacity:0;transition:transform .9s var(--spring),opacity .9s var(--spring)}
+.ai-panel.left.visible,.ai-panel.right.visible{transform:translateX(0);opacity:1}
+.ai-panel-line{height:3px;margin-bottom:38px}
+.ap-lbl{font-family:var(--f-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt-40);margin-bottom:14px}
+.ap-h3{font-family:var(--f-serif);font-size:1.4rem;font-weight:400;color:var(--navy);margin-bottom:18px}
+.ap-body{font-family:var(--f-sans);font-size:.84rem;font-weight:300;line-height:2.3;color:var(--txt-60);margin-bottom:22px}
+.mono{font-family:var(--f-mono);font-size:.78rem;background:var(--bg-3);padding:2px 7px;border-radius:2px;color:var(--deep-blue)}
+
+/* ── PREMIUM SERVICE ROWS ── */
+.svc-row{
+  display:grid;grid-template-columns:60px 1fr 110px;gap:22px;align-items:center;
+  padding:28px;background:var(--white);border-bottom:1px solid var(--border);
+  transition:background .26s,transform .3s var(--spring);
+}
+.svc-row:hover{background:var(--bg);transform:translateX(5px)}
+.sr-num{font-family:var(--f-mono);font-size:2.6rem;font-weight:300;color:rgba(9,26,66,.06);line-height:1}
+.sr-title{font-family:var(--f-serif);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:7px;display:flex;align-items:center;gap:10px}
+.sr-desc{font-family:var(--f-sans);font-size:.82rem;font-weight:300;color:var(--txt-60);line-height:2}
+.sr-link{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);text-align:right;cursor:pointer;transition:color .22s}
+.sr-link:hover{color:var(--deep-blue)}
+
+/* ── ESG / MARKET ── */
+.mkt-panel{background:var(--bg-3);border:1px solid var(--border);padding:44px 38px}
+.mp-ttl{font-family:var(--f-serif);font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.mp-ttl::before{content:'';width:20px;height:1px;background:var(--blue)}
+.af-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border)}
+.af-row:last-child{border-bottom:none}
+.af-lbl{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.1em;color:var(--txt-40)}
+.af-val{font-family:var(--f-serif);font-size:1.05rem;font-weight:400;color:var(--navy)}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.bar-lbl{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.06em;color:var(--txt-40);width:90px;flex-shrink:0}
+.bar-track{flex:1;height:5px;background:var(--bg-3);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;animation:bar-grow 1.8s var(--spring) both}
+.bar-val{font-family:var(--f-mono);font-size:.82rem;width:42px;text-align:right;flex-shrink:0;color:var(--navy)}
+.esg-row{display:flex;gap:8px;margin-top:20px}
+.esg-cell{flex:1;padding:18px 10px;text-align:center;border:1px solid var(--border);transition:border-color .25s,background .25s}
+.esg-cell:hover{border-color:var(--blue);background:var(--white)}
+.esg-g{font-family:var(--f-serif);font-size:1.9rem;font-weight:300;line-height:1;color:var(--navy)}
+.esg-n{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-40);margin-top:5px}
+
+/* ── CONTACT ── */
+.cf-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);
+  box-shadow:0 24px 64px rgba(9,26,66,.07);
+}
+.cf-field{background:var(--white);transition:background .26s}
+.cf-field:focus-within{background:var(--bg)}
+.cf-field.full{grid-column:1/-1}
+.cf-lbl{display:block;padding:18px 22px 0;font-family:var(--f-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt-40);transition:color .22s}
+.cf-field:focus-within .cf-lbl{color:var(--blue)}
+.cf-input,.cf-select,.cf-textarea{
+  display:block;width:100%;padding:8px 22px 18px;
+  background:transparent;border:none;outline:none;
+  font-family:var(--f-sans);font-size:.92rem;font-weight:400;color:var(--navy);
+}
+.cf-select{-webkit-appearance:none}
+.cf-select option{background:var(--white)}
+.cf-textarea{resize:none;height:120px;padding-top:10px}
+.cf-submit{
+  grid-column:1/-1;width:100%;padding:24px;
+  background:var(--navy);
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--white);border:none;cursor:none;
+  position:relative;overflow:hidden;
+  transition:background .28s,transform .28s var(--spring);
+}
+.cf-submit::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.05);transform:translateX(-100%);transition:transform .4s var(--spring)}
+.cf-submit:hover::before{transform:translateX(0)}
+.cf-submit:hover{background:var(--deep-blue);transform:translateY(-2px)}
+.cf-submit.sent{background:var(--spring-green);pointer-events:none}
+
+/* ── INFO CARDS ── */
+.info-card{background:var(--bg-2);border:1px solid var(--border);padding:46px 40px;transition:background .26s,border-color .26s}
+.info-card:hover{background:var(--white);border-color:var(--border-strong)}
+.ic-tag{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ic-tag::before{content:'';width:18px;height:1px}
+.ic-h3{font-family:var(--f-serif);font-size:1.44rem;font-weight:400;color:var(--navy);margin-bottom:12px}
+.ic-body{font-family:var(--f-sans);font-size:.86rem;font-weight:300;color:var(--txt-60);line-height:2.2}
+.ic-tel{display:block;margin-top:16px;font-family:var(--f-serif);font-size:2.2rem;font-weight:300;letter-spacing:.08em;color:var(--navy);transition:color .22s}
+.ic-tel:hover{color:var(--blue)}
+.lc-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:pulse-ring 2.8s infinite;display:inline-block;margin-right:8px}
+
+/* ── LOCATION ── */
+#LOC{background:var(--bg-2);padding:80px 0}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr}
+.lc{padding:52px 64px;border-right:1px solid var(--border);transition:background .3s}
+.lc:last-child{border-right:none}
+.lc:hover{background:var(--white)}
+.lc-tag{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.lc-tag::before{content:'';width:20px;height:1px;background:var(--blue)}
+.lc-h3{font-family:var(--f-serif);font-size:1.62rem;font-weight:400;color:var(--navy);margin-bottom:14px}
+.lc-addr{font-family:var(--f-sans);font-size:.86rem;font-weight:300;color:var(--txt-60);line-height:2.2}
+.lc-tel{display:block;margin-top:20px;font-family:var(--f-serif);font-size:2rem;font-weight:300;letter-spacing:.08em;color:var(--navy);transition:color .22s}
+.lc-tel:hover{color:var(--blue)}
+
+/* ── CTA BAND ── */
+#CTA-BAND{background:var(--navy);padding:104px 52px;position:relative;overflow:hidden}
+#CTA-BAND::before{
+  content:'';position:absolute;top:-50%;right:-8%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,143,217,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+#CTA-BAND::after{
+  content:'';position:absolute;bottom:-30%;left:-5%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(247,188,212,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-bg-text{
+  position:absolute;bottom:-30px;right:-20px;
+  font-family:var(--f-serif);font-size:22vw;font-style:italic;font-weight:300;
+  color:rgba(255,255,255,.018);line-height:1;pointer-events:none;user-select:none;
+}
+.cta-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:72px;align-items:center;position:relative;z-index:1}
+.cta-eyebrow{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.cta-h2{font-family:var(--f-serif);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;color:var(--white);line-height:1.22;margin-bottom:16px}
+.cta-body{font-family:var(--f-sans);font-size:.9rem;font-weight:300;color:rgba(255,255,255,.5);line-height:2.3}
+.cta-side{display:flex;flex-direction:column;gap:16px;align-items:flex-end}
+.cta-tel{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;letter-spacing:.06em;color:rgba(255,255,255,.85)}
+
+/* ── FLOATING PHONE BUTTON (mobile) ── */
+#FLOAT-TEL{
+  display:none;
+  position:fixed;bottom:24px;right:20px;z-index:700;
+  background:var(--blue);color:var(--white);
+  width:56px;height:56px;border-radius:50%;
+  align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(59,143,217,.4),0 2px 8px rgba(9,26,66,.2);
+  font-size:1.4rem;text-decoration:none;
+  animation:pulse-ring 2.8s infinite;
+  transition:transform .26s var(--spring),background .22s;
+}
+#FLOAT-TEL:hover{transform:scale(1.1);background:var(--deep-blue)}
+@media(max-width:960px){#FLOAT-TEL{display:flex}}
+
+/* ── FOOTER ── */
+#FOOTER{background:var(--dark-2);padding:80px 52px 44px}
+.ft-wrap{max-width:1180px;margin:0 auto}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:28px}
+.ft-logo-m{font-family:var(--f-serif);font-size:1.1rem;letter-spacing:.34em;color:rgba(255,255,255,.62);margin-bottom:4px;font-weight:300}
+.ft-logo-s{font-family:var(--f-mono);font-size:.5rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:18px}
+.ft-about{font-family:var(--f-sans);font-size:.76rem;font-weight:300;color:rgba(255,255,255,.3);line-height:2.2}
+.ft-col h4{font-family:var(--f-mono);font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.ft-col button{display:block;font-family:var(--f-sans);font-size:.76rem;font-weight:300;color:rgba(255,255,255,.3);line-height:2.5;transition:color .2s;text-align:left}
+.ft-col button:hover{color:rgba(255,255,255,.75)}
+.ft-tel{font-family:var(--f-serif);font-size:1.38rem;font-weight:300;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+.ft-open{font-family:var(--f-sans);font-size:.66rem;letter-spacing:.06em;color:rgba(255,255,255,.24);margin-top:6px;line-height:2.1}
+.ft-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.ft-notice{font-family:var(--f-sans);font-size:.62rem;line-height:2.2;color:rgba(255,255,255,.22);max-width:640px}
+.ft-copy{font-family:var(--f-mono);font-size:.56rem;letter-spacing:.08em;color:rgba(255,255,255,.2);text-align:right;white-space:nowrap}
+
+/* ── SCROLL REVEAL ── */
+.SR {opacity:0;transform:translateY(32px);transition:opacity .9s var(--spring),transform .9s var(--spring)}
+.SRL{opacity:0;transform:translateX(-32px);transition:opacity .9s var(--spring),transform .9s var(--spring)}
+.SRR{opacity:0;transform:translateX(32px);transition:opacity .9s var(--spring),transform .9s var(--spring)}
+.SR.V,.SRL.V,.SRR.V{opacity:1;transform:none}
+.sd1{transition-delay:.08s}.sd2{transition-delay:.18s}.sd3{transition-delay:.28s}
+.sd4{transition-delay:.38s}.sd5{transition-delay:.48s}
+
+/* ── SPRING CARD ── */
+.spring-card{
+  background:var(--white);border:1px solid var(--border);
+  padding:44px 38px;position:relative;overflow:hidden;
+  transition:transform .38s var(--spring),box-shadow .38s var(--spring),border-color .3s;
+}
+.spring-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep-blue),var(--sky),var(--sakura))}
+.spring-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(9,26,66,.09);border-color:var(--border-med)}
+.sc-num{font-family:var(--f-mono);font-size:3.4rem;color:rgba(59,143,217,.06);line-height:1;margin-bottom:18px;font-weight:300}
+.sc-title{font-family:var(--f-serif);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:12px}
+.sc-body{font-family:var(--f-sans);font-size:.82rem;font-weight:300;line-height:2.2;color:var(--txt-60)}
+
+/* ── GTX NUMBER HIGHLIGHT ── */
+.gtx-num{
+  font-family:var(--f-serif);font-size:clamp(3.5rem,7vw,6.5rem);font-weight:300;
+  line-height:1;color:var(--navy);
+  background:linear-gradient(135deg,var(--deep-blue),var(--blue),var(--sky));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.gtx-unit{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.24em;color:var(--blue);margin-left:4px}
+.gtx-label{font-family:var(--f-sans);font-size:.84rem;font-weight:300;color:var(--txt-60);margin-top:6px;line-height:1.9}
+.gtx-card{
+  text-align:center;padding:40px 24px;
+  border:1px solid var(--border);background:var(--white);
+  position:relative;overflow:hidden;
+  transition:transform .38s var(--spring),box-shadow .38s var(--spring),border-color .3s;
+}
+.gtx-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(9,26,66,.09);border-color:var(--border-med)}
+.gtx-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--deep-blue),var(--blue),var(--sky));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .42s var(--spring);
+}
+.gtx-card:hover::before{transform:scaleX(1)}
+
+/* ── DESIGNER CARD ── */
+.designer-card{background:var(--bg-3);border:1px solid var(--border);padding:42px 38px}
+.dc-role{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.18em;color:var(--blue);margin-bottom:7px}
+.dc-name{font-family:var(--f-serif);font-size:1.7rem;font-weight:400;color:var(--navy);margin-bottom:5px}
+.dc-sub{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;color:var(--spring-green);margin-bottom:22px}
+.dc-divider{height:1px;background:var(--border-med);margin-bottom:20px}
+.dc-body{font-family:var(--f-sans);font-size:.82rem;font-weight:300;color:var(--txt-60);line-height:2.2}
+
+/* ── BOTANICAL VISUAL ── */
+.botanical-box{
+  border:1px solid var(--border-med);aspect-ratio:4/5;
+  position:relative;overflow:hidden;
+}
+.botanical-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--spring)}
+.botanical-box:hover img{transform:scale(1.04)}
+.botanical-box::after{content:'봄의 도시 · SPRING GARDEN';position:absolute;bottom:22px;left:22px;font-family:var(--f-mono);font-size:.56rem;letter-spacing:.28em;color:rgba(255,255,255,.75);z-index:2;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.botanical-box::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(9,26,66,.38),transparent 55%)}
+
+/* ── BRAND VISUAL ── */
+.brand-vis{
+  aspect-ratio:4/5;
+  border:1px solid var(--border-med);
+  position:relative;overflow:hidden;
+}
+.brand-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--spring)}
+.brand-vis:hover img{transform:scale(1.04)}
+.brand-vis::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(9,26,66,.32),transparent 55%)}
+.brand-vis-label{position:absolute;bottom:28px;left:28px;font-family:var(--f-mono);font-size:.56rem;letter-spacing:.3em;color:rgba(255,255,255,.7);z-index:2}
+
+/* ── TOWER VIZ ── */
+.tower-viz{
+  border:1px solid var(--border-med);
+  min-height:360px;position:relative;overflow:hidden;
+}
+.tower-viz img{width:100%;height:100%;object-fit:cover;display:block;min-height:360px;transition:transform .6s var(--spring)}
+.tower-viz:hover img{transform:scale(1.04)}
+.tv-label{position:absolute;bottom:22px;right:26px;font-family:var(--f-mono);font-size:.56rem;letter-spacing:.28em;color:rgba(255,255,255,.75);z-index:2;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.tower-viz::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(9,26,66,.38),transparent 60%);z-index:1}
+
+/* ── FOLDOUT BANNER ── */
+.fb-banner{position:relative;height:280px;overflow:hidden;background:var(--navy)}
+.fb-text{position:absolute;top:50%;left:52px;transform:translateY(-50%);max-width:540px}
+.fb-label{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;color:var(--sky)}
+.fb-label::before{content:'';width:28px;height:1px;background:var(--sky)}
+.fb-h2{font-family:var(--f-serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.22;margin-bottom:16px;color:var(--white)}
+.fb-body{font-family:var(--f-sans);font-size:.88rem;font-weight:300;line-height:2.3;margin-bottom:28px;color:rgba(255,255,255,.55)}
+
+/* ── IMAGE LIGHTBOX ── */
+#LIGHTBOX{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(6,12,28,.95);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:none;align-items:center;justify-content:center;
+  cursor:zoom-out;
+}
+#LIGHTBOX.open{display:flex;animation:fadeUp .3s var(--spring)}
+#LB-IMG{
+  max-width:90vw;max-height:85vh;
+  object-fit:contain;
+  box-shadow:0 40px 100px rgba(0,0,0,.5);
+  border:1px solid rgba(255,255,255,.06);
+}
+#LB-CLOSE{
+  position:absolute;top:24px;right:28px;
+  font-family:var(--f-mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);background:none;border:1px solid rgba(255,255,255,.15);
+  padding:8px 18px;cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+#LB-CLOSE:hover{color:var(--white);border-color:rgba(255,255,255,.4)}
+#LB-CAP{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  font-family:var(--f-mono);font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);white-space:nowrap;
+}
+
+/* ── INLINE CAPTION ── */
+.ig-wrap{position:relative}
+.ig-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(9,26,66,.72),transparent);padding:32px 28px 22px}
+.ig-cap-txt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.22em;color:var(--white)}
+
+/* ── HAMBURGER BUTTON ── */
+.nav-ham{
+  display:none;flex-direction:column;justify-content:center;gap:6px;
+  width:44px;height:44px;padding:8px;z-index:1000;
+  background:none;border:none;cursor:pointer;
+}
+.nav-ham span{
+  display:block;width:24px;height:1.5px;
+  background:var(--white);
+  transition:transform .32s var(--spring),opacity .22s,width .28s;
+  transform-origin:center;
+}
+#NAV.scrolled .nav-ham span{background:var(--navy)}
+.nav-ham.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;width:0}
+.nav-ham.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* Mobile drawer */
+#MOB-NAV{
+  position:fixed;inset:0;z-index:799;
+  background:rgba(9,26,66,.97);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;
+  opacity:0;pointer-events:none;
+  transition:opacity .4s var(--smooth);
+}
+#MOB-NAV.open{opacity:1;pointer-events:all}
+.mob-nav-btn{
+  font-family:var(--f-serif);font-size:clamp(2rem,5vw,3rem);font-weight:300;
+  color:rgba(255,255,255,.55);letter-spacing:.06em;
+  padding:18px 0;width:100%;text-align:center;
+  background:none;border:none;border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .22s,letter-spacing .3s;
+  max-width:320px;
+}
+.mob-nav-btn:hover,.mob-nav-btn.on{color:var(--white);letter-spacing:.12em}
+.mob-cta{
+  margin-top:40px;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  padding:18px 52px;
+  background:var(--blue);color:var(--white);
+  border:none;
+  transition:background .26s,transform .28s var(--spring),box-shadow .28s;
+  box-shadow:0 8px 28px rgba(59,143,217,.35);
+}
+.mob-cta:hover{background:var(--deep-blue);transform:translateY(-2px);box-shadow:0 16px 40px rgba(59,143,217,.4)}
+.mob-close-hint{
+  position:absolute;bottom:44px;
+  font-family:var(--f-mono);font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  #NAV{padding:0 20px}
+  .nav-links{display:none}
+  .nav-ham{display:flex}
+  .nav-cta{display:none}
+  .h-body{padding:0 24px 96px}
+  .h-widget,.h-stats{display:none}
+  #STATS-BAND{padding:44px 20px}
+  .sb-wrap{grid-template-columns:repeat(2,1fr)}
+  #PHOTO-STRIP{grid-template-columns:repeat(2,1fr);height:400px}
+  #MENU{padding:72px 20px}
+  .menu-grid{grid-template-columns:1fr}
+  #OV{padding:72px 20px}
+  .ov-wrap{grid-template-columns:1fr;gap:44px}
+  #LOC{padding:0}
+  .loc-grid{grid-template-columns:1fr}
+  .lc{border-right:none;border-bottom:1px solid var(--border)}
+  #CTA-BAND{padding:72px 20px}
+  .cta-inner{grid-template-columns:1fr;gap:36px}
+  .cta-side{align-items:flex-start}
+  .SEC{padding:64px 20px}
+  .COL2{grid-template-columns:1fr;gap:36px}
+  .COL2-3{grid-template-columns:1fr}
+  .arch-kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .fp-grid{grid-template-columns:1fr}
+  .ai-duel{grid-template-columns:1fr}
+  .cf-wrap{grid-template-columns:1fr}
+  #FOOTER{padding:48px 20px 28px}
+  .ft-grid{grid-template-columns:1fr;gap:28px}
+  .ft-bottom{flex-direction:column}
+  .tl-wrap::before{left:12px}
+  .tl-item{grid-template-columns:0 28px 1fr !important}
+  .ti-l{display:none}
+  .ti-r{padding-left:18px}
+  .sub-tab-bar button{padding:14px 18px;font-size:.58rem}
+}
+
+@media(max-width:640px){
+  .h-btns{flex-direction:column;align-items:flex-start}
+  .menu-grid{grid-template-columns:1fr}
+  .fp-grid{grid-template-columns:1fr}
+  .ai-duel{grid-template-columns:1fr}
+  .sb-wrap{grid-template-columns:1fr 1fr}
+  .bt-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="SCROLL-PROG"></div>
+
+<!-- MESH BACKGROUND -->
+<div class="mesh-bg">
+  <div class="mesh-blob blob-1"></div>
+  <div class="mesh-blob blob-2"></div>
+  <div class="mesh-blob blob-3"></div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div id="C-DOT"></div>
+<div id="C-RING"></div>
+
+<!-- CINEMATIC LOADER -->
+<div id="LOADER">
+  <div class="ld-grain"></div>
+  <div class="ld-inner">
+    <div class="ld-overflow">
+      <span class="ld-brand">PARK ROCHE</span>
+    </div>
+    <div class="ld-overflow-sub">
+      <span class="ld-sub">Seoul One · Spring 2026</span>
+    </div>
+    <div class="ld-num-wrap">
+      <span id="LD-PERCENT">0</span>%
+    </div>
+    <div class="ld-track"><div class="ld-fill"></div></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav id="NAV">
+  <div class="nav-logo" onclick="goto('home')">
+    <span class="nav-logo-main">PARK ROCHE</span>
+    <span class="nav-logo-sub">Seoul One · Spring 2026</span>
+  </div>
+  <div class="nav-links">
+    <button onclick="goto('home')" class="on">홈</button>
+    <button onclick="goto('brand')">브랜드</button>
+    <button onclick="goto('arch')">건축·평면</button>
+    <button onclick="goto('land')">조경</button>
+    <button onclick="goto('well')">웰니스</button>
+    <button onclick="goto('prem')">프리미엄</button>
+    <button onclick="goto('cont')">상담·문의</button>
+  </div>
+  <button class="nav-cta" onclick="goto('cont')">VIP 상담 신청</button>
+  <button class="nav-ham" id="NAV-HAM" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div id="MOB-NAV">
+  <button class="mob-nav-btn on" onclick="mobGoto('home')">홈</button>
+  <button class="mob-nav-btn" onclick="mobGoto('brand')">브랜드</button>
+  <button class="mob-nav-btn" onclick="mobGoto('arch')">건축·평면</button>
+  <button class="mob-nav-btn" onclick="mobGoto('land')">조경</button>
+  <button class="mob-nav-btn" onclick="mobGoto('well')">웰니스</button>
+  <button class="mob-nav-btn" onclick="mobGoto('prem')">프리미엄</button>
+  <button class="mob-nav-btn" onclick="mobGoto('cont')">상담·문의</button>
+  <button class="mob-cta" onclick="mobGoto('cont')">VIP 상담 신청 →</button>
+  <span class="mob-close-hint">ESC 또는 메뉴를 탭하여 닫기</span>
+</div>
+
+<!-- FLOATING TEL -->
+<a id="FLOAT-TEL" href="tel:025683032" aria-label="전화상담">📞</a>
+
+<!-- TICKER -->
+<div id="TICKER">
+  <div class="tk-badge"><div class="tk-dot"></div>LIVE</div>
+  <div class="tk-track" id="TT">
+    <span class="t-blue">GTX-C 삼성역 예정 9분 · 2028 개통</span>
+    <span>·</span>
+    <span class="t-sakura">봄 벚꽃 조망 · 서울 노원 · 자연 속 럭셔리</span>
+    <span>·</span>
+    <span class="t-green">전용 70㎡ · 73㎡ · 80㎡ 선택 가능</span>
+    <span>·</span>
+    <span class="t-blue">지하 4층 · 지상 49층 · 총 342세대</span>
+    <span>·</span>
+    <span>야마구치 타케시 조경 설계 · TOWNSCAPE Associates Tokyo</span>
+    <span>·</span>
+    <span class="t-sakura">광운대역 도보 5분 · 1호선 직결</span>
+    <span>·</span>
+    <span class="t-green">HDC 현대산업개발 시공 · 2028년 입주</span>
+    <span>·</span>
+    <span class="t-blue">강남 30분 · 서울역 20분 · 삼성역 9분</span>
+    <span>·</span>
+    <span class="t-sakura">VIP 갤러리 4월 오픈 — 사전 예약 접수 중</span>
+    <span>·</span>
+    <span class="t-green">2028년 입주 예정</span>
+    <span>·</span>
+    <span class="t-blue">전담 상담사 24시간 내 연락 보장</span>
+    <span>·</span>
+  </div>
+</div>
+
+<!-- ════════════════════
+     PAGE: HOME
+════════════════════ -->
+<div id="P-HOME" class="PAGE visible">
+
+  <!-- HERO -->
+  <section id="HERO">
+    <div class="h-photo"></div>
+    <div class="h-overlay"></div>
+    <div class="h-stars"></div>
+    <div class="h-grid"></div>
+    <div class="h-geo hg1"></div>
+    <div class="h-geo hg2"></div>
+    <div class="h-geo hg3"></div>
+    <div class="h-vline hvl-1"></div>
+    <div class="h-vline hvl-2"></div>
+    <div class="h-scan"></div>
+    <div id="PETALS"></div>
+
+    <!-- Info Widget -->
+    <div class="h-widget">
+      <div class="hw-top">
+        <div class="hw-dot"></div>
+        <span class="hw-title">분양 현황 안내</span>
+      </div>
+      <div class="hw-inner">
+        <div class="hw-row">
+          <span class="hw-lbl">입주 예정</span>
+          <span class="hw-val b">2028년</span>
+        </div>
+        <div class="hw-row">
+          <span class="hw-lbl">청약 경쟁률</span>
+          <span class="hw-val g">42 : 1</span>
+        </div>
+        <div class="hw-row">
+          <span class="hw-lbl">잔여 세대</span>
+          <span class="hw-val">소수 잔여</span>
+        </div>
+        <div class="hw-bar-bg"><div class="hw-bar-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="h-body">
+      <p class="h-label">서울 노원 · 2026 분양 오픈</p>
+      <h1 class="h-h1">
+        <span class="shimmer">Park Roche</span><br>
+        Seoul <em>One</em>
+      </h1>
+      <p class="h-sub">건강한 삶, 아름다운 자연, 최고의 서비스</p>
+      <p class="h-tagline">
+        의료·운동·자연이 하나로 연결된 서울 노원 최고의 주거.<br>
+        가족의 건강과 편안한 노후를 함께 설계합니다.
+      </p>
+      <div class="h-btns">
+        <button class="BTN-BLUE" onclick="goto('cont')">VIP 갤러리 예약</button>
+        <button class="BTN-LINE" onclick="goto('brand')">브랜드 스토리</button>
+      </div>
+    </div>
+
+    <div class="h-stats">
+      <div>
+        <div class="hs-n" data-target="49">0</div>
+        <div class="hs-l">지상층</div>
+      </div>
+      <div class="hs-sep"></div>
+      <div>
+        <div class="hs-n" data-target="342">0</div>
+        <div class="hs-l">총 세대</div>
+      </div>
+      <div class="hs-sep"></div>
+      <div>
+        <div class="hs-n" data-target="94">0</div>
+        <div class="hs-l">입지 점수</div>
+      </div>
+    </div>
+
+    <div class="h-scroll">
+      <span class="hs-txt">Scroll</span>
+      <div class="hs-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div id="STATS-BAND">
+    <div class="sb-wrap">
+      <div class="sb-cell SR">
+        <div class="sb-num" data-target="342">0</div>
+        <div class="sb-en">총 세대 수</div>
+        <div class="sb-kr">342 세대</div>
+      </div>
+      <div class="sb-cell SR sd1">
+        <div class="sb-num" data-target="49">0</div>
+        <div class="sb-en">지상 층수</div>
+        <div class="sb-kr">49층 2개 동</div>
+      </div>
+      <div class="sb-cell SR sd2">
+        <div class="sb-num" data-target="2028">0</div>
+        <div class="sb-en">입주 예정년도</div>
+        <div class="sb-kr">2028년 입주</div>
+      </div>
+      <div class="sb-cell SR sd3">
+        <div class="sb-num" data-target="42">0</div>
+        <div class="sb-en">청약 경쟁률</div>
+        <div class="sb-kr">42대 1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO GALLERY STRIP -->
+  <div id="PHOTO-STRIP">
+    <div class="ps-cell" onclick="var i=this.querySelector('img');if(i)openLB(i.src,this.dataset.label||'')" data-label="외관 · 랜드마크">
+      <img src="img/photo-night.jpg" alt="건축 외관"/>
+    </div>
+    <div class="ps-cell" onclick="var i=this.querySelector('img');if(i)openLB(i.src,this.dataset.label||'')" data-label="벚꽃 조경">
+      <img src="img/photo-garden.jpg" alt="봄 조경"/>
+    </div>
+    <div class="ps-cell" onclick="var i=this.querySelector('img');if(i)openLB(i.src,this.dataset.label||'')" data-label="피트니스 & 웰니스">
+      <img src="img/photo-fitness.jpg" alt="피트니스 센터"/>
+    </div>
+    <div class="ps-cell" onclick="var i=this.querySelector('img');if(i)openLB(i.src,this.dataset.label||'')" data-label="스파 & 럭셔리">
+      <img src="img/photo-spa.jpg" alt="스파 & 웰니스"/>
+    </div>
+  </div>
+
+  <!-- MENU GRID -->
+  <section id="MENU">
+    <div class="menu-wrap">
+      <div class="menu-head SR">
+        <p class="mh-label">안내 메뉴</p>
+        <h2 class="mh-h2">무엇이 궁금하신가요?</h2>
+        <p class="mh-sub">아래 항목을 클릭하시면 자세한 내용을 바로 확인하실 수 있습니다</p>
+      </div>
+      <div class="menu-grid">
+        <button class="mc SR" onclick="goto('brand')">
+          <div class="mc-num">01</div>
+          <div class="mc-kr">브랜드 스토리</div>
+          <div class="mc-en">Brand Story</div>
+          <div class="mc-desc">파크로쉬의 웰니스 철학과 서울원 프로젝트의 탄생 배경을 소개합니다.</div>
+          <span class="mc-arr">자세히 보기 →</span>
+        </button>
+        <button class="mc SR sd1" onclick="goto('arch')">
+          <div class="mc-num">02</div>
+          <div class="mc-kr">건축 설계</div>
+          <div class="mc-en">Architecture</div>
+          <div class="mc-desc">지상 49층, 2개 동 — 세계적 건축가와 함께 설계한 서울 스카이라인의 새 기준.</div>
+          <span class="mc-arr">평면도 보기 →</span>
+        </button>
+        <button class="mc SR sd2" onclick="goto('land')">
+          <div class="mc-num">03</div>
+          <div class="mc-kr">조경 설계</div>
+          <div class="mc-en">Landscape</div>
+          <div class="mc-desc">벚꽃·철쭉·목련이 계절마다 피어나는 도심 속 자연 생태 공원.</div>
+          <span class="mc-arr">조경 보기 →</span>
+        </button>
+        <button class="mc SR" onclick="goto('well')">
+          <div class="mc-num">04</div>
+          <div class="mc-kr">웰니스 시설</div>
+          <div class="mc-en">Wellness</div>
+          <div class="mc-desc">전문 의료팀·피트니스·스파·명상실이 한 건물에 — 건강한 일상을 지원합니다.</div>
+          <span class="mc-arr">시설 보기 →</span>
+        </button>
+        <button class="mc SR sd1" onclick="goto('prem')">
+          <div class="mc-num">05</div>
+          <div class="mc-kr">프리미엄 서비스</div>
+          <div class="mc-en">Premium</div>
+          <div class="mc-desc">24시간 컨시어지·스마트 홈·메디컬 케어로 품격 있는 일상을 경험하세요.</div>
+          <span class="mc-arr">서비스 보기 →</span>
+        </button>
+        <button class="mc SR sd2" onclick="goto('cont')">
+          <div class="mc-num">06</div>
+          <div class="mc-kr">상담 · VIP 신청</div>
+          <div class="mc-en">Contact</div>
+          <div class="mc-desc">전담 상담사가 24시간 내 연락드립니다. 전화 또는 온라인으로 접수하세요.</div>
+          <span class="mc-arr">지금 신청 →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="OV">
+    <div class="ov-wrap">
+      <div>
+        <p class="ov-label SR">사업 개요</p>
+        <h2 class="ov-h2 SR sd1">서울 노원의<br><em>새로운 랜드마크</em></h2>
+        <table class="ov-table SR sd2">
+          <tr class="ov-tr"><td class="ov-th">위치</td><td class="ov-td">서울시 노원구 화랑로45길 145 일원</td></tr>
+          <tr class="ov-tr"><td class="ov-th">규모</td><td class="ov-td"><strong>지하 4층 · 지상 49층 · 2개 동</strong></td></tr>
+          <tr class="ov-tr"><td class="ov-th">세대 수</td><td class="ov-td"><strong>총 342세대</strong></td></tr>
+          <tr class="ov-tr"><td class="ov-th">전용 면적</td><td class="ov-td">70㎡ · 73㎡ · 80㎡</td></tr>
+          <tr class="ov-tr"><td class="ov-th">건설사</td><td class="ov-td">HDC현대산업개발</td></tr>
+          <tr class="ov-tr"><td class="ov-th">분양 시기</td><td class="ov-td">2026년 봄 (예정)</td></tr>
+          <tr class="ov-tr"><td class="ov-th">입주 예정</td><td class="ov-td"><strong>2028년</strong></td></tr>
+        </table>
+        <p class="ov-note SR sd3">· 상기 내용은 예정 사항으로 변경될 수 있습니다.<br>· VIP 갤러리 방문으로 실제 모형 및 설계 도면을 확인하세요.</p>
+      </div>
+      <div class="ov-panel SRR">
+        <p class="ov-panel-title">입지 분석 지수</p>
+        <div class="ov-stat">
+          <div class="ov-stat-n" data-target="94">0</div>
+          <div class="ov-stat-l">종합 입지 점수</div>
+        </div>
+        <div class="ov-stat">
+          <div class="ov-stat-n" data-target="42">0</div>
+          <div class="ov-stat-l">청약 경쟁률</div>
+        </div>
+        <div class="ov-stat">
+          <div class="ov-stat-n" data-target="18">0</div>
+          <div class="ov-stat-l">가치 상승 예상 (%)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="CTA-BAND">
+    <div class="cta-bg-text">봄</div>
+    <div class="cta-inner">
+      <div class="SR">
+        <p class="cta-eyebrow">VIP 우선 상담 접수</p>
+        <h2 class="cta-h2">지금 등록하시면<br>전담 상담사가 연락드립니다</h2>
+        <p class="cta-body">온라인 또는 전화로 간단히 접수하시면, 전담 상담사가 24시간 이내 직접 연락드립니다. VIP 갤러리 우선 방문권도 함께 드립니다.</p>
+      </div>
+      <div class="cta-side SRR">
+        <p class="cta-tel">02-568-3032</p>
+        <button class="BTN-BLUE" onclick="goto('cont')">온라인 상담 신청 →</button>
+        <button class="BTN-LINE" onclick="goto('cont')">VIP 갤러리 예약</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LOCATION & TRANSPORT -->
+  <section style="background:var(--white);padding:100px 52px">
+    <div class="WRAP">
+      <div style="text-align:center;margin-bottom:64px" class="SR">
+        <p class="sec-lbl" style="justify-content:center">입지 안내</p>
+        <h2 class="sec-h2">서울 노원 · 광운대역 도보 5분</h2>
+        <p class="sec-body" style="max-width:600px;margin:0 auto">지하철 1호선 · GTX-C(예정) 광운대역 바로 앞.<br>강남 30분 · 여의도 25분 · 서울역 20분 생활권.</p>
+      </div>
+      <div class="SR sd1" style="border:1px solid var(--border-med);overflow:hidden;margin-bottom:48px">
+        <img src="img/photo-arch.jpg" alt="파크로쉬 서울원 위치도" style="width:100%;display:block"/>
+      </div>
+      <div class="SR sd2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;height:220px;background:var(--border);margin-bottom:48px">
+        <div style="overflow:hidden;position:relative">
+          <img src="img/photo-indoor.jpg" alt="광운대역 주변" style="width:100%;height:100%;object-fit:cover"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 14px 12px;background:linear-gradient(to top,rgba(9,26,66,.7),transparent);font-family:var(--f-mono);font-size:.54rem;letter-spacing:.16em;color:rgba(255,255,255,.9)">광운대역 인근</div>
+        </div>
+        <div style="overflow:hidden;position:relative">
+          <img src="img/loc-map.jpg" alt="주변 편의시설" style="width:100%;height:100%;object-fit:cover"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 14px 12px;background:linear-gradient(to top,rgba(9,26,66,.7),transparent);font-family:var(--f-mono);font-size:.54rem;letter-spacing:.16em;color:rgba(255,255,255,.9)">생활 편의시설</div>
+        </div>
+        <div style="overflow:hidden;position:relative">
+          <img src="img/loc-img1.jpg" alt="자연환경" style="width:100%;height:100%;object-fit:cover"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 14px 12px;background:linear-gradient(to top,rgba(9,26,66,.7),transparent);font-family:var(--f-mono);font-size:.54rem;letter-spacing:.16em;color:rgba(255,255,255,.9)">주변 자연환경</div>
+        </div>
+        <div style="overflow:hidden;position:relative">
+          <img src="img/loc-img2.jpg" alt="교통 인프라" style="width:100%;height:100%;object-fit:cover"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 14px 12px;background:linear-gradient(to top,rgba(9,26,66,.7),transparent);font-family:var(--f-mono);font-size:.54rem;letter-spacing:.16em;color:rgba(255,255,255,.9)">교통 인프라</div>
+        </div>
+      </div>
+      <!-- GTX Transport -->
+      <div class="SR sd3" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)">
+        <div style="background:var(--navy);padding:52px 48px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep-blue),var(--blue),var(--sky))"></div>
+          <p style="font-family:var(--f-mono);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sky);margin-bottom:16px">GTX-C 예정 노선</p>
+          <h3 style="font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--white);line-height:1.25;margin-bottom:16px">광운대역 정차<br><em style="color:var(--sky)">GTX-C 개통 예정</em></h3>
+          <p style="font-family:var(--f-sans);font-size:.88rem;color:rgba(255,255,255,.5);line-height:2.1;font-weight:300;margin-bottom:32px">GTX-C 개통 시 삼성역 9분, 강남 직결. 지금도 1호선으로 서울역 20분, 강남 30분.</p>
+          <div style="display:flex;gap:28px">
+            <div><div style="font-family:var(--f-serif);font-size:2.2rem;color:var(--sky);font-weight:300;line-height:1">9분</div><div style="font-family:var(--f-mono);font-size:.52rem;letter-spacing:.14em;color:rgba(255,255,255,.3);margin-top:5px">삼성역 (GTX-C)</div></div>
+            <div style="width:1px;background:rgba(255,255,255,.1)"></div>
+            <div><div style="font-family:var(--f-serif);font-size:2.2rem;color:var(--sky);font-weight:300;line-height:1">20분</div><div style="font-family:var(--f-mono);font-size:.52rem;letter-spacing:.14em;color:rgba(255,255,255,.3);margin-top:5px">서울역 (1호선)</div></div>
+            <div style="width:1px;background:rgba(255,255,255,.1)"></div>
+            <div><div style="font-family:var(--f-serif);font-size:2.2rem;color:var(--sky);font-weight:300;line-height:1">30분</div><div style="font-family:var(--f-mono);font-size:.52rem;letter-spacing:.14em;color:rgba(255,255,255,.3);margin-top:5px">강남역 (지하철)</div></div>
+          </div>
+        </div>
+        <div style="overflow:hidden;position:relative;min-height:280px">
+          <img src="img/loc-img3.jpg" alt="GTX 고속철도" style="width:100%;height:100%;object-fit:cover;display:block"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(9,26,66,.3),transparent)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /P-HOME -->
+
+
+<!-- ════════════════════
+     PAGE: BRAND
+════════════════════ -->
+<div id="P-BRAND" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-photo" style="background-image:url('img/photo-garden.jpg')"></div>
+    <div class="pb-overlay"></div>
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label">브랜드 스토리</p>
+      <h1 class="pb-title">Brand <em>Story</em></h1>
+      <p class="pb-sub">파크로쉬가 꿈꾸는 삶의 방법</p>
+    </div>
+  </div>
+
+  <section class="SEC SEC-WHITE">
+    <div class="WRAP">
+      <div class="COL2">
+        <div>
+          <p class="sec-lbl SR">철학 & 비전</p>
+          <h2 class="sec-h2 SR sd1">자연과 기술이<br><em>공존하는 삶</em></h2>
+          <p class="sec-body SR sd2">파크로쉬는 단순한 아파트가 아닙니다. 거주자의 몸과 마음, 관계와 환경을 함께 돌보는 통합 웰니스 생태계입니다. 서울의 봄처럼, 당신의 삶에 새로운 계절이 시작됩니다.</p>
+          <div class="SR sd3" style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="BTN-INK" onclick="goto('arch')">건축 보기</button>
+            <button class="BTN-LINE-DARK" onclick="goto('cont')">문의하기</button>
+          </div>
+        </div>
+        <div class="brand-vis SRR">
+          <img src="img/banner-brand.jpg" alt="파크로쉬 럭셔리 인테리어"/>
+          <p class="brand-vis-label">Seoul One · 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG2">
+    <div class="WRAP">
+      <div class="SR" style="text-align:center;margin-bottom:72px">
+        <p class="sec-lbl" style="justify-content:center">브랜드 가치</p>
+        <h2 class="sec-h2">세 가지 핵심 가치</h2>
+      </div>
+      <div class="COL2-3">
+        <div class="spring-card SR">
+          <div class="sc-num">01</div>
+          <div class="sc-title">Wellness First</div>
+          <div class="sc-body">건강이 중심인 설계 — 의료, 운동, 명상, 식문화가 일상에 자연스럽게 녹아있습니다.</div>
+        </div>
+        <div class="spring-card SR sd2">
+          <div class="sc-num">02</div>
+          <div class="sc-title">Nature Integrated</div>
+          <div class="sc-body">계절의 흐름을 담은 조경. 벚꽃·철쭉·은행나무가 단지 곳곳에 피어납니다.</div>
+        </div>
+        <div class="spring-card SR sd4">
+          <div class="sc-num">03</div>
+          <div class="sc-title">Smart Living</div>
+          <div class="sc-body">AI 기반 스마트 홈과 에너지 시스템으로 편리하고 지속 가능한 삶을 지원합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="BIG-QUOTE">
+    <span class="bq-mark SR">"</span>
+    <p class="bq-text SR sd1">봄은 끝나지 않는다.<br>그것이 제대로 된 공간에 머무를 때는.</p>
+    <div class="bq-attr SR sd2">
+      <div class="bq-line"></div>
+      <span class="bq-name">Park Roche Philosophy, 2026</span>
+      <div class="bq-line"></div>
+    </div>
+  </div>
+
+  <section class="SEC SEC-WHITE">
+    <div class="WRAP-SM">
+      <div class="SR" style="text-align:center;margin-bottom:64px">
+        <p class="sec-lbl" style="justify-content:center">연혁</p>
+        <h2 class="sec-h2">브랜드 히스토리</h2>
+      </div>
+      <div class="tl-wrap">
+        <div class="tl-item SR">
+          <div class="ti-l"><div class="ti-year">2018</div><div class="ti-title">브랜드 창립</div><div class="ti-body">웰니스 주거 전문 브랜드 파크로쉬 설립</div></div>
+          <div class="tl-dot"></div><div></div>
+        </div>
+        <div class="tl-item SR">
+          <div></div>
+          <div class="tl-dot"></div>
+          <div class="ti-r"><div class="ti-year">2020</div><div class="ti-title">첫 번째 프로젝트</div><div class="ti-body">강남 파크로쉬 1차 완판 · 업계 최고 만족도</div></div>
+        </div>
+        <div class="tl-item SR">
+          <div class="ti-l"><div class="ti-year">2023</div><div class="ti-title">국제 수상</div><div class="ti-body">2023 Asia Pacific Wellness Real Estate Award 수상</div></div>
+          <div class="tl-dot special"></div><div></div>
+        </div>
+        <div class="tl-item SR">
+          <div></div>
+          <div class="tl-dot special"></div>
+          <div class="ti-r"><div class="ti-year accent">2026</div><div class="ti-title">Seoul One 출시</div><div class="ti-body">노원 · 49층 랜드마크 · 한국 최초 통합 웰니스 타워</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════
+     PAGE: ARCH
+════════════════════ -->
+<div id="P-ARCH" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-photo" style="background-image:url('img/banner-brand.jpg')"></div>
+    <div class="pb-overlay"></div>
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label">건축 설계</p>
+      <h1 class="pb-title">Archi<em>tecture</em></h1>
+      <p class="pb-sub">서울 스카이라인의 새로운 기준</p>
+    </div>
+  </div>
+  <div class="sub-tab-bar" id="ARCH-TABS">
+    <button class="on" onclick="archTab(0)">개요</button>
+    <button onclick="archTab(1)">평면도</button>
+    <button onclick="archTab(2)">단지 배치</button>
+    <button onclick="archTab(3)">외관 설계</button>
+  </div>
+
+  <section class="SEC SEC-WHITE" data-tab-panel="0">
+    <div class="WRAP">
+      <div class="COL2">
+        <div>
+          <p class="sec-lbl SR">설계 철학</p>
+          <h2 class="sec-h2 SR sd1">수직의 자연,<br><em>수평의 도시</em></h2>
+          <p class="sec-body SR sd2">지상 49층의 두 타워는 서울 북쪽 산세를 배경으로, 자연과 도시의 경계를 지웁니다. 층마다 다른 하늘, 시간마다 달라지는 빛을 담은 건축입니다.</p>
+        </div>
+        <div class="tower-viz SRR">
+          <img src="img/photo-night.jpg" alt="파크로쉬 서울원 건축 외관"/>
+          <p class="tv-label">TOWER SECTION · 49F</p>
+        </div>
+      </div>
+      <div class="arch-kpi-grid SR">
+        <div class="arch-kpi"><div class="ak-n">49F</div><div class="ak-l">최고층</div></div>
+        <div class="arch-kpi"><div class="ak-n">2</div><div class="ak-l">개 동</div></div>
+        <div class="arch-kpi"><div class="ak-n">342</div><div class="ak-l">총 세대</div></div>
+        <div class="arch-kpi"><div class="ak-n">B4</div><div class="ak-l">지하 주차</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG2" data-tab-panel="1">
+    <div class="WRAP">
+      <div class="SR" style="text-align:center;margin-bottom:60px">
+        <p class="sec-lbl" style="justify-content:center">평형별 안내</p>
+        <h2 class="sec-h2">Floor Plans</h2>
+      </div>
+      <div class="fp-grid">
+        <div class="fp-card SR">
+          <div class="fp-type">TYPE A</div>
+          <div class="fp-area">70<span>㎡</span></div>
+          <div class="fp-desc">2베이 남향 배치. 주방·거실 개방형 설계로 채광과 통풍이 우수합니다.</div>
+          <div class="fp-score">세대 수 : 124세대<span class="tag-pill tag-new">잔여</span></div>
+        </div>
+        <div class="fp-card featured SR sd2">
+          <div class="fp-type">TYPE B · 인기</div>
+          <div class="fp-area">73<span>㎡</span></div>
+          <div class="fp-desc">3베이 남향 + 동향 코너 유닛. 서울 북악 조망과 벚꽃 뷰를 동시에 즐깁니다.</div>
+          <div class="fp-score">세대 수 : 148세대<span class="tag-pill tag-hot">인기</span><span class="tag-pill tag-vip">VIP</span></div>
+        </div>
+        <div class="fp-card SR sd4">
+          <div class="fp-type">TYPE C · 프리미엄</div>
+          <div class="fp-area">80<span>㎡</span></div>
+          <div class="fp-desc">펜트하우스형 넓은 발코니. 프라이빗 테라스에서 서울 전경을 한눈에.</div>
+          <div class="fp-score">세대 수 : 70세대<span class="tag-pill tag-vip">프리미엄</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════
+     PAGE: LANDSCAPE
+════════════════════ -->
+<div id="P-LAND" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-photo" style="background-image:url('img/photo-garden.jpg')"></div>
+    <div class="pb-overlay"></div>
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label">조경 설계</p>
+      <h1 class="pb-title">Land<em>scape</em></h1>
+      <p class="pb-sub">도심 속 봄의 생태 공원</p>
+    </div>
+  </div>
+
+  <section class="SEC SEC-WHITE">
+    <div class="WRAP">
+      <div class="COL2">
+        <div>
+          <p class="sec-lbl SR">조경 철학</p>
+          <h2 class="sec-h2 SR sd1">서울에 피어나는<br><em>봄의 정원</em></h2>
+          <p class="sec-body SR sd2">조경 설계의 주제는 '한국의 봄'입니다. 벚꽃·철쭉·목련·라일락이 계절마다 다른 색으로 단지를 물들이며, 사계절 내내 자연의 변화를 일상에서 경험할 수 있습니다.</p>
+          <div class="jp-quote SR sd3" style="font-family:var(--f-serif);font-size:clamp(1.3rem,2.5vw,2rem);font-style:italic;font-weight:300;color:var(--navy);line-height:1.8;margin-bottom:10px;margin-top:32px">"자연은 최고의 치유자다"</div>
+          <div class="kr-quote SR sd4" style="font-family:var(--f-mono);font-size:.82rem;color:var(--spring-green);letter-spacing:.12em;margin-bottom:28px">— 조경 설계 팀</div>
+        </div>
+        <div class="botanical-box SRR">
+          <img src="img/photo-spa.jpg" alt="벚꽃 조경"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG2">
+    <div class="WRAP">
+      <p class="sec-lbl SR">수목 리스트</p>
+      <h2 class="sec-h2 SR sd1">사계절 수목 구성</h2>
+      <div class="COL2-3 SR sd2">
+        <div class="spring-card">
+          <div class="sc-title">봄 · Spring</div>
+          <div class="sc-body" style="color:var(--sakura-deep)">벚꽃 · 철쭉 · 목련 · 라일락<br>단지 전체를 분홍빛으로</div>
+        </div>
+        <div class="spring-card">
+          <div class="sc-title">여름 · Summer</div>
+          <div class="sc-body" style="color:var(--spring-green)">느티나무 · 단풍나무 · 수국<br>짙은 녹음과 청량한 그늘</div>
+        </div>
+        <div class="spring-card">
+          <div class="sc-title">가을·겨울 · Autumn</div>
+          <div class="sc-body" style="color:var(--blue)">은행나무 · 메타세쿼이아<br>황금빛과 설경의 아름다움</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-WHITE" style="padding-top:72px;padding-bottom:72px">
+    <div class="WRAP">
+      <p class="sec-lbl SR" style="margin-bottom:20px">조경 마스터플랜</p>
+      <h2 class="sec-h2 SR sd1" style="margin-bottom:32px">단지 전체 조경 설계도</h2>
+      <div class="SR sd2" style="border:1px solid var(--border-med);overflow:hidden">
+        <img src="img/brand-exterior.jpg" alt="조경 마스터플랜" style="width:100%;display:block"/>
+        <div style="padding:14px 22px;background:var(--bg-2);border-top:1px solid var(--border);font-family:var(--f-mono);font-size:.58rem;letter-spacing:.18em;color:var(--txt-40)">LANDSCAPE MASTER PLAN · TOWNSCAPE ASSOCIATES · YAMAGUCHI · 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG3">
+    <div class="WRAP">
+      <p class="sec-lbl SR">조경 설계팀</p>
+      <div class="COL2">
+        <div class="designer-card SR">
+          <img src="img/banner-land.jpg" alt="조경 설계가" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block;margin-bottom:0"/>
+          <div style="padding:24px 28px 28px">
+            <img src="img/tower-arch.png" alt="Yamaguchi" style="height:44px;margin-bottom:14px;opacity:.8"/>
+            <div class="dc-role">수석 조경 설계사</div>
+            <div class="dc-name">야마구치 타케시</div>
+            <div class="dc-sub">TOWNSCAPE Associates · 도쿄</div>
+            <div class="dc-divider"></div>
+            <div class="dc-body">50년 경력의 국제 생태 조경 전문가. 도쿄·싱가포르·서울 도심 자연 프로젝트를 주도. 한국 최초 통합 웰니스 조경을 서울원에 완성합니다.</div>
+          </div>
+        </div>
+        <div class="SRR" style="display:flex;flex-direction:column;gap:20px">
+          <div class="mkt-panel">
+            <div class="mp-ttl">조경 면적 현황</div>
+            <div class="bar-row">
+              <div class="bar-lbl">녹지율</div>
+              <div class="bar-track"><div class="bar-fill" style="width:62%;background:linear-gradient(90deg,var(--spring-green),var(--spring-mint))"></div></div>
+              <div class="bar-val">62%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lbl">수목 밀도</div>
+              <div class="bar-track"><div class="bar-fill" style="width:78%;background:linear-gradient(90deg,var(--blue),var(--sky))"></div></div>
+              <div class="bar-val">A+</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-lbl">사계절성</div>
+              <div class="bar-track"><div class="bar-fill" style="width:95%;background:linear-gradient(90deg,var(--sakura-deep),var(--sakura))"></div></div>
+              <div class="bar-val">95%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════
+     PAGE: WELLNESS
+════════════════════ -->
+<div id="P-WELL" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-photo" style="background-image:url('img/photo-fitness.jpg')"></div>
+    <div class="pb-overlay"></div>
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label">웰니스</p>
+      <h1 class="pb-title">Well<em>ness</em></h1>
+      <p class="pb-sub">의료·운동·스파가 한 곳에 — 건강한 일상</p>
+    </div>
+  </div>
+
+  <section class="SEC SEC-WHITE">
+    <div class="WRAP">
+      <div class="SR" style="text-align:center;margin-bottom:20px">
+        <p class="sec-lbl" style="justify-content:center;margin-bottom:12px">
+          <span style="width:26px;height:1px;background:var(--sky);display:inline-block"></span>
+          2026 World Wellness Trend
+          <span style="width:26px;height:1px;background:var(--sky);display:inline-block"></span>
+        </p>
+        <h2 class="sec-h2">웰니스 주거의 새 표준</h2>
+        <p class="sec-body" style="max-width:640px;margin:0 auto">2026년, 세계 럭셔리 부동산 시장에서 웰니스 주거는 단순한 트렌드를 넘어 새로운 표준이 되었습니다. 파크로쉬 서울원은 이 기준의 최선봉입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTDOOR COMMUNITY SPACE PHOTO -->
+  <section style="padding:0">
+    <div style="position:relative;height:400px;overflow:hidden">
+      <img src="img/banner-well.jpg" alt="단지 야외 광장" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(9,26,66,.6),transparent 60%)"></div>
+      <div style="position:absolute;bottom:0;left:0;padding:52px 60px;max-width:560px">
+        <p style="font-family:var(--f-mono);font-size:.58rem;letter-spacing:.28em;color:var(--sky);margin-bottom:10px">야외 커뮤니티 · CG이미지</p>
+        <h3 style="font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--white);line-height:1.22;margin-bottom:12px">집 앞에서 시작되는<br><em style="color:var(--sky)">자연과의 일상</em></h3>
+        <p style="font-family:var(--f-sans);font-size:.88rem;color:rgba(255,255,255,.5);line-height:2;font-weight:300">사계절 조경, 산책로, 카페, 문화시설이 단지 안에. 엘리베이터를 내리면 바로 만나는 도심 속 자연.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI DUAL PANEL -->
+  <section class="SEC SEC-BG2">
+    <div class="WRAP">
+      <p class="sec-lbl SR">AI 분석</p>
+      <h2 class="sec-h2 SR sd1">웰니스 지수 분석</h2>
+      <div class="ai-duel SR sd2">
+        <div class="ai-panel left" id="AP-LEFT">
+          <div class="ai-panel-line" style="background:linear-gradient(90deg,var(--deep-blue),var(--sky))"></div>
+          <div class="ap-lbl">신체 웰니스 지수</div>
+          <div class="ap-h3">의료·운동·영양</div>
+          <div class="ap-body">
+            단지 내 <span class="mono">메디컬 허브</span>와 연계된 3단계 건강 관리 시스템. 입주민 전담 가정의와 <span class="mono">AI 건강 모니터링</span>으로 24/7 케어를 제공합니다.
+          </div>
+          <div class="bar-row">
+            <div class="bar-lbl">의료 접근성</div>
+            <div class="bar-track"><div class="bar-fill" style="width:96%;background:linear-gradient(90deg,var(--deep-blue),var(--blue))"></div></div>
+            <div class="bar-val">96</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lbl">운동 시설</div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%;background:linear-gradient(90deg,var(--blue),var(--sky))"></div></div>
+            <div class="bar-val">88</div>
+          </div>
+        </div>
+        <div class="ai-panel right" id="AP-RIGHT">
+          <div class="ai-panel-line" style="background:linear-gradient(90deg,var(--sakura-deep),var(--sakura))"></div>
+          <div class="ap-lbl">정신 웰니스 지수</div>
+          <div class="ap-h3">마음·자연·문화</div>
+          <div class="ap-body">
+            계절 변화에 맞춘 <span class="mono">자연 테라피</span>와 문화 커뮤니티 공간. 입주민 전용 <span class="mono">명상 가든</span>과 도서관이 정신 건강을 지원합니다.
+          </div>
+          <div class="bar-row">
+            <div class="bar-lbl">자연 접촉</div>
+            <div class="bar-track"><div class="bar-fill" style="width:94%;background:linear-gradient(90deg,var(--sakura-deep),var(--sakura))"></div></div>
+            <div class="bar-val">94</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lbl">커뮤니티</div>
+            <div class="bar-track"><div class="bar-fill" style="width:91%;background:linear-gradient(90deg,var(--azalea),var(--lilac))"></div></div>
+            <div class="bar-val">91</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG3">
+    <div class="WRAP">
+      <p class="sec-lbl SR">웰니스 시설</p>
+      <h2 class="sec-h2 SR sd1">5차원 웰니스 커뮤니티</h2>
+      <div class="COL2-3 SR sd2">
+        <div class="wl-pillar">
+          <svg class="wp-icon" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="#3b8fd9" stroke-width="1" fill="none" opacity="0.4"/>
+            <path d="M24 14C24 14 18 20 18 26C18 29.31 20.69 32 24 32C27.31 32 30 29.31 30 26C30 20 24 14 24 14Z" fill="#87ceeb" opacity="0.4"/>
+          </svg>
+          <div class="wp-title">신체 건강</div>
+          <div class="wp-body">피트니스 센터, 수영장, 골프 레인지, 요가 스튜디오</div>
+        </div>
+        <div class="wl-pillar">
+          <svg class="wp-icon" viewBox="0 0 48 48" fill="none">
+            <path d="M24 8L28 18H38L30 24L33 34L24 28L15 34L18 24L10 18H20L24 8Z" stroke="#f7bcd4" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="24" cy="24" r="6" fill="#f7bcd4" opacity="0.3"/>
+          </svg>
+          <div class="wp-title">정신 건강</div>
+          <div class="wp-body">명상 가든, 도서관, 아트 갤러리, 사운드 테라피 룸</div>
+        </div>
+        <div class="wl-pillar">
+          <svg class="wp-icon" viewBox="0 0 48 48" fill="none">
+            <rect x="10" y="20" width="28" height="20" rx="2" stroke="#8fbc6a" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M18 20V16C18 12.69 20.69 10 24 10C27.31 10 30 12.69 30 16V20" stroke="#8fbc6a" stroke-width="1" opacity="0.5"/>
+            <circle cx="24" cy="30" r="3" fill="#8fbc6a" opacity="0.4"/>
+          </svg>
+          <div class="wp-title">사회 건강</div>
+          <div class="wp-body">입주민 커뮤니티 클럽, 게스트 하우스, 파티 룸</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-NAVY">
+    <div class="WRAP" style="text-align:center">
+      <p class="sec-lbl SR" style="justify-content:center;color:var(--sky)">
+        <span style="background:var(--sky);width:32px;height:1px;display:inline-block"></span>
+        웰니스 지수
+        <span style="background:var(--sky);width:32px;height:1px;display:inline-block"></span>
+      </p>
+      <div class="esg-row SR sd1">
+        <div class="esg-cell">
+          <div class="esg-g" data-target="94" style="color:var(--white)">0</div>
+          <div class="esg-n" style="color:rgba(255,255,255,.4)">입지 점수</div>
+        </div>
+        <div class="esg-cell">
+          <div class="esg-g" data-target="88" style="color:var(--white)">0</div>
+          <div class="esg-n" style="color:rgba(255,255,255,.4)">환경 점수</div>
+        </div>
+        <div class="esg-cell">
+          <div class="esg-g" data-target="96" style="color:var(--white)">0</div>
+          <div class="esg-n" style="color:rgba(255,255,255,.4)">의료 접근</div>
+        </div>
+        <div class="esg-cell">
+          <div class="esg-g" data-target="91" style="color:var(--white)">0</div>
+          <div class="esg-n" style="color:rgba(255,255,255,.4)">커뮤니티</div>
+        </div>
+      </div>
+      <div class="SR sd2" style="margin-top:48px">
+        <button class="BTN-BLUE" onclick="goto('cont')">VIP 갤러리 예약</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════
+     PAGE: PREMIUM
+════════════════════ -->
+<div id="P-PREM" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-photo" style="background-image:url('img/landscape-plan.jpg')"></div>
+    <div class="pb-overlay"></div>
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label">프리미엄 서비스</p>
+      <h1 class="pb-title">Pre<em>mium</em></h1>
+      <p class="pb-sub">일상의 모든 순간을 편리하고 품격 있게</p>
+    </div>
+  </div>
+
+  <section class="SEC SEC-WHITE">
+    <div class="WRAP">
+      <p class="sec-lbl SR">5대 서비스</p>
+      <div class="SR sd1" style="margin-bottom:52px;display:grid;grid-template-columns:1fr 1fr;gap:4px;height:260px;background:var(--border)">
+        <div style="overflow:hidden;position:relative">
+          <img src="img/gtx-transport.jpg" alt="메디컬 케어 센터" style="width:100%;height:100%;object-fit:cover;display:block"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 18px 14px;background:linear-gradient(to top,rgba(9,26,66,.65),transparent);font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.9)">메디컬 케어 센터</div>
+        </div>
+        <div style="overflow:hidden;position:relative">
+          <img src="img/landscape-plan.jpg" alt="프리미엄 인테리어" style="width:100%;height:100%;object-fit:cover;display:block"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 18px 14px;background:linear-gradient(to top,rgba(9,26,66,.65),transparent);font-family:var(--f-mono);font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.9)">프리미엄 인테리어</div>
+        </div>
+      </div>
+      <div class="SRR" style="font-family:var(--f-sans);font-size:.9rem;font-weight:300;line-height:2.4;color:var(--txt-60);border-left:2px solid rgba(59,143,217,.25);padding-left:24px;margin-bottom:56px">
+        파크로쉬 서울원은 5가지 프리미엄 서비스를 통해 거주자의 모든 순간을 품격 있게 설계합니다. 의료부터 스마트 홈까지, 삶의 전 영역을 아우릅니다.
+      </div>
+      <div>
+        <div class="svc-row SR">
+          <div class="sr-num">01</div>
+          <div>
+            <div class="sr-title">메디컬 허브 <span class="tag-pill tag-vip">EXCLUSIVE</span></div>
+            <div class="sr-desc">단지 내 전문의 클리닉 · 24시간 응급 대응 · 입주민 전담 가정의 배정</div>
+          </div>
+          <div class="sr-link">자세히 →</div>
+        </div>
+        <div class="svc-row SR sd1">
+          <div class="sr-num">02</div>
+          <div>
+            <div class="sr-title">컨시어지 서비스</div>
+            <div class="sr-desc">호텔급 컨시어지 · 발렛 파킹 · 홈 케어 · 세탁 배달 서비스</div>
+          </div>
+          <div class="sr-link">자세히 →</div>
+        </div>
+        <div class="svc-row SR sd2">
+          <div class="sr-num">03</div>
+          <div>
+            <div class="sr-title">스마트 홈 시스템</div>
+            <div class="sr-desc">AI 음성 제어 · 에너지 최적화 · 스마트 보안 · 원격 관리</div>
+          </div>
+          <div class="sr-link">자세히 →</div>
+        </div>
+        <div class="svc-row SR sd3">
+          <div class="sr-num">04</div>
+          <div>
+            <div class="sr-title">프라이빗 클럽</div>
+            <div class="sr-desc">입주민 전용 레스토랑 · 라운지 · 세미나실 · 게스트 룸</div>
+          </div>
+          <div class="sr-link">자세히 →</div>
+        </div>
+        <div class="svc-row SR sd4">
+          <div class="sr-num">05</div>
+          <div>
+            <div class="sr-title">교육 & 문화 프로그램</div>
+            <div class="sr-desc">어린이 교육 센터 · 성인 아카데미 · 갤러리 · 음악 스튜디오</div>
+          </div>
+          <div class="sr-link">자세히 →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="SEC SEC-BG2">
+    <div class="WRAP">
+      <div class="COL2">
+        <div class="mkt-panel SRL">
+          <div class="mp-ttl">시장 분석 데이터</div>
+          <div class="af-row"><div class="af-lbl">입지 희소성 지수</div><div class="af-val">A++</div></div>
+          <div class="af-row"><div class="af-lbl">향후 5년 가치 상승 예상</div><div class="af-val">+18.4%</div></div>
+          <div class="af-row"><div class="af-lbl">주변 인프라 점수</div><div class="af-val">92 / 100</div></div>
+          <div class="af-row"><div class="af-lbl">교통 접근성</div><div class="af-val">지하철 4분</div></div>
+        </div>
+        <div class="SRR" style="display:flex;flex-direction:column;gap:24px">
+          <div style="background:var(--white);border:1px solid var(--border);padding:44px 38px">
+            <p style="font-family:var(--f-serif);font-size:1.4rem;font-weight:300;color:var(--navy);line-height:1.6;margin-bottom:18px">"의료와 자연이 함께하는<br>서울 최초의 완전한 웰니스 주거"</p>
+            <p style="font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;color:var(--blue)">— 파크로쉬 브랜드 디렉터</p>
+          </div>
+          <button class="BTN-INK" onclick="goto('cont')" style="display:block;text-align:center">VIP 갤러리 방문 예약</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fb-banner SR">
+    <div class="fb-text">
+      <p class="fb-label">프리미엄 체험</p>
+      <h2 class="fb-h2">VIP 갤러리에서<br>직접 체험하세요.</h2>
+      <p class="fb-body">4월 오픈 예정. 실제 평형 모형과 서비스를 미리 경험할 수 있습니다.</p>
+      <button class="BTN-BLUE" onclick="goto('cont')">VIP 갤러리 예약</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════
+     PAGE: CONTACT
+════════════════════ -->
+<div id="P-CONT" class="PAGE">
+  <div class="page-banner">
+    <div class="pb-grid"></div><div class="pb-scan"></div>
+    <div class="pb-content">
+      <p class="pb-label" style="color:var(--sky)">VIP 관심 고객 등록</p>
+      <h1 class="pb-title">Contact <em style="color:var(--sky)">&amp; VIP</em></h1>
+      <p class="pb-sub">전담 컨설턴트가 24시간 내 연락드립니다</p>
+    </div>
+  </div>
+
+  <section class="SEC SEC-BG">
+    <div class="WRAP-SM">
+      <div class="SR" style="text-align:center;margin-bottom:64px">
+        <p class="sec-lbl" style="justify-content:center">
+          <span style="width:26px;height:1px;background:var(--blue);display:inline-block"></span>
+          관심 고객 등록
+          <span style="width:26px;height:1px;background:var(--blue);display:inline-block"></span>
+        </p>
+        <h2 class="sec-h2">문의하시면<br>전담 컨설턴트가 연락드립니다.</h2>
+        <p class="sec-body">모든 정보는 상담 목적으로만 사용되며 철저히 보호됩니다.<br>VIP 등록 시 오픈 전 우선 상담 기회가 제공됩니다.</p>
+      </div>
+      <div class="cf-wrap SR">
+        <div class="cf-field"><label class="cf-lbl" for="cf-name">성함</label><input id="cf-name" class="cf-input" type="text" placeholder="홍길동"/></div>
+        <div class="cf-field"><label class="cf-lbl" for="cf-tel">연락처</label><input id="cf-tel" class="cf-input" type="tel" placeholder="010-0000-0000"/></div>
+        <div class="cf-field"><label class="cf-lbl" for="cf-size">관심 평형</label>
+          <select id="cf-size" class="cf-select"><option value="">선택해주세요</option><option>전용 70㎡</option><option>전용 73㎡</option><option>전용 80㎡</option><option>미정</option></select>
+        </div>
+        <div class="cf-field"><label class="cf-lbl" for="cf-type">문의 유형</label>
+          <select id="cf-type" class="cf-select"><option value="">선택해주세요</option><option>분양 상담</option><option>VIP 갤러리 방문</option><option>투자 분석 문의</option><option>기타</option></select>
+        </div>
+        <div class="cf-field full"><label class="cf-lbl" for="cf-msg">문의 내용 (선택)</label><textarea id="cf-msg" class="cf-textarea" placeholder="궁금하신 내용을 자유롭게 입력해주세요."></textarea></div>
+        <button class="cf-submit" id="CF-BTN" onclick="submitForm()"><span id="CF-TXT">VIP 상담 신청하기 →</span></button>
+      </div>
+      <p class="SR" style="margin-top:28px;text-align:center;font-family:var(--f-sans);font-size:.64rem;line-height:2.3;color:var(--txt-40)">
+        · 개인정보는 상담 목적 외 사용되지 않으며, 관련 법령에 따라 보호됩니다.<br>
+        · 상담 가능 시간 : 평일 10:00 – 18:00 &nbsp;/&nbsp; 주말·공휴일 10:00 – 17:00<br>
+        · 금융위원회 등록 : 제 2026-서울-0XXX호 &nbsp;|&nbsp; 사업자등록번호 : 214-88-75980
+      </p>
+    </div>
+  </section>
+
+  <section class="SEC SEC-WHITE" style="padding-top:0">
+    <div class="WRAP" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)">
+      <div class="info-card SRL">
+        <p class="ic-tag" style="color:var(--blue)"><span style="background:var(--blue);width:18px;height:1px;display:inline-block"></span>갤러리 · 4월 오픈 예정</p>
+        <span class="lc-dot"></span>
+        <h3 class="ic-h3">VIP 갤러리</h3>
+        <p class="ic-body">서울시 노원구 마들로1길 45<br>평일 10:00 – 18:00 &nbsp;/&nbsp; 주말 10:00 – 17:00</p>
+        <a href="tel:025683032" class="ic-tel">02-568-3032</a>
+      </div>
+      <div class="info-card SRR">
+        <p class="ic-tag" style="color:var(--txt-40)"><span style="background:var(--txt-40);width:18px;height:1px;display:inline-block"></span>건설 현장</p>
+        <h3 class="ic-h3">프로젝트 현장</h3>
+        <p class="ic-body">서울시 노원구 화랑로45길 145 일원<br>지하 4층 &nbsp;·&nbsp; 지상 49층 &nbsp;·&nbsp; 2개동</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- FOOTER -->
+<footer id="FOOTER">
+  <div class="ft-wrap">
+    <div class="ft-grid">
+      <div>
+        <p class="ft-logo-m">PARK ROCHE</p>
+        <p class="ft-logo-s">Seoul One · Spring 2026</p>
+        <p class="ft-about">새로운 삶의 방법,<br>웰니스 라이프의 시작.<br>한국의 봄처럼 당신의 삶을 피웁니다.</p>
+      </div>
+      <div class="ft-col">
+        <h4>PARK ROCHE</h4>
+        <button onclick="goto('brand')">Brand Story</button>
+        <button onclick="goto('arch')">건축 설계</button>
+        <button onclick="goto('land')">조경 설계</button>
+        <button onclick="goto('cont')">사업 개요</button>
+      </div>
+      <div class="ft-col">
+        <h4>Premium</h4>
+        <button onclick="goto('prem')">메디컬 서비스</button>
+        <button onclick="goto('prem')">커뮤니티</button>
+        <button onclick="goto('prem')">컨시어지</button>
+        <button onclick="goto('well')">웰니스</button>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <p class="ft-tel">02-568-3032</p>
+        <p class="ft-open">갤러리 (4월 오픈 예정)<br>서울시 노원구 마들로1길 45</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-notice">· 본 홈페이지에 사용된 사진 및 이미지 등은 소비자의 이해를 돕기 위한 것으로 실제 시공에 따라 변경될 수 있습니다.<br>HDC현대산업개발 · 서울특별시 용산구 한강대로 23길 55 · 온라인대행 : 리얼투데이 · 사업자등록번호 : 214-88-75980</p>
+      <p class="ft-copy">© 2026 HDC HYUNDAI<br>DEVELOPMENT COMPANY.<br>ALL RIGHTS RESERVED.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+'use strict';
+
+/* ── PAGE ROUTING ── */
+const PAGES = {home:'P-HOME',brand:'P-BRAND',arch:'P-ARCH',land:'P-LAND',well:'P-WELL',prem:'P-PREM',cont:'P-CONT'};
+const NAV_IDS = {home:0,brand:1,arch:2,land:3,well:4,prem:5,cont:6};
+
+function goto(key) {
+  if (!PAGES[key]) return;
+  document.querySelectorAll('.PAGE').forEach(p => p.classList.remove('visible'));
+  document.getElementById(PAGES[key]).classList.add('visible');
+  document.querySelectorAll('.nav-links button').forEach((b,i) => b.classList.toggle('on', i === NAV_IDS[key]));
+  window.scrollTo({top:0, behavior:'smooth'});
+  setTimeout(initReveal, 120);
+}
+
+/* ── CINEMATIC LOADER ── */
+window.addEventListener('load', () => {
+  let n = 0;
+  const el = document.getElementById('LD-PERCENT');
+  const iv = setInterval(() => {
+    n = Math.min(100, n + Math.ceil(Math.random() * 4 + 1));
+    el.textContent = n;
+    if (n >= 100) {
+      clearInterval(iv);
+      setTimeout(() => {
+        const LD = document.getElementById('LOADER');
+        LD.classList.add('hide');
+        LD.addEventListener('animationend', () => LD.remove(), {once:true});
+      }, 300);
+    }
+  }, 28);
+});
+
+/* ── CUSTOM CURSOR ── */
+const cDot = document.getElementById('C-DOT');
+const cRing = document.getElementById('C-RING');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function loop() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  cDot.style.left = mx + 'px'; cDot.style.top = my + 'px';
+  cRing.style.left = rx + 'px'; cRing.style.top = ry + 'px';
+  requestAnimationFrame(loop);
+})();
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest('a,button,.mc,.spring-card,.svc-row,.wl-pillar,.fp-card,.esg-cell,.info-card,.lc,.arch-kpi,.ai-panel');
+  if (t) {
+    cDot.style.width = '14px'; cDot.style.height = '14px';
+    cDot.style.background = 'var(--sky)';
+    cRing.style.width = '52px'; cRing.style.height = '52px';
+    cRing.style.borderColor = 'rgba(59,143,217,.5)';
+  } else {
+    cDot.style.width = '8px'; cDot.style.height = '8px';
+    cDot.style.background = 'var(--blue)';
+    cRing.style.width = '36px'; cRing.style.height = '36px';
+    cRing.style.borderColor = 'rgba(59,143,217,.38)';
+  }
+});
+
+/* ── SCROLL PROGRESS ── */
+const PROG = document.getElementById('SCROLL-PROG');
+window.addEventListener('scroll', () => {
+  const pct = scrollY / (document.documentElement.scrollHeight - innerHeight) * 100;
+  PROG.style.width = Math.min(pct, 100) + '%';
+}, {passive: true});
+
+/* ── STICKY NAV ── */
+const NAV = document.getElementById('NAV');
+window.addEventListener('scroll', () => {
+  NAV.classList.toggle('scrolled', scrollY > 72);
+}, {passive:true});
+
+/* ── SCROLL REVEAL + COUNTER ── */
+function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  if (!target) return;
+  const dur = 1800;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / dur, 1);
+    el.textContent = Math.floor(easeOutCubic(progress) * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target.toLocaleString();
+  }
+  requestAnimationFrame(step);
+}
+
+function initReveal() {
+  const els = document.querySelectorAll('.PAGE.visible .SR, .PAGE.visible .SRL, .PAGE.visible .SRR');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.classList.add('V');
+          // Counter animation
+          e.target.querySelectorAll('[data-target]').forEach(animateCounter);
+          // Also animate if the element itself has data-target
+          if (e.target.dataset.target) animateCounter(e.target);
+        }, i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+  els.forEach(el => { el.classList.remove('V'); obs.observe(el); });
+
+  // Also init counters visible directly
+  const counters = document.querySelectorAll('.PAGE.visible [data-target]');
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); }
+    });
+  }, {threshold: 0.5});
+  counters.forEach(c => cObs.observe(c));
+
+  // AI dual panel
+  const panels = document.querySelectorAll('.PAGE.visible .ai-panel');
+  const pObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); pObs.unobserve(e.target); } });
+  }, {threshold: 0.15});
+  panels.forEach(p => pObs.observe(p));
+}
+initReveal();
+// Only re-init scroll reveal when page changes, not on every scroll event
+
+/* ── HAMBURGER MENU ── */
+const HAM = document.getElementById('NAV-HAM');
+const MOB = document.getElementById('MOB-NAV');
+function toggleMob(force) {
+  const open = force !== undefined ? force : !HAM.classList.contains('open');
+  HAM.classList.toggle('open', open);
+  MOB.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+HAM.addEventListener('click', () => toggleMob());
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMob(false); });
+
+function mobGoto(key) {
+  toggleMob(false);
+  setTimeout(() => goto(key), 200);
+  // Update active state
+  document.querySelectorAll('.mob-nav-btn').forEach((b,i) => {
+    b.classList.toggle('on', i === NAV_IDS[key]);
+  });
+}
+
+/* ── TEXT SCRAMBLE (NAV) ── */
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ㄱㄴㄷㄹ!@#$%';
+document.querySelectorAll('.nav-links button').forEach(btn => {
+  const original = btn.textContent;
+  btn.addEventListener('mouseenter', () => {
+    let iterations = 0;
+    clearInterval(btn._si);
+    btn._si = setInterval(() => {
+      btn.textContent = original.split('').map((c,i) => {
+        if (i < Math.floor(iterations)) return original[i];
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      iterations += 0.5;
+      if (iterations >= original.length) {
+        btn.textContent = original;
+        clearInterval(btn._si);
+      }
+    }, 30);
+  });
+});
+
+/* ── MAGNETIC 3D TILT (Cards) ── */
+document.querySelectorAll('.mc, .spring-card, .fp-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `perspective(600px) rotateX(${-y*10}deg) rotateY(${x*10}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* ── TICKER DUPLICATE ── */
+const TT = document.getElementById('TT');
+TT.innerHTML += TT.innerHTML;
+
+/* ── PETALS ── */
+const PW = document.getElementById('PETALS');
+['🌸','🌼','🌿','❄️'].forEach((emoji,i) => {
+  for (let j = 0; j < 3; j++) {
+    const el = document.createElement('div');
+    el.style.cssText = `position:absolute;left:${6+i*22+Math.random()*16}%;top:${6+Math.random()*70}%;font-size:${.75+Math.random()*.6}rem;pointer-events:none;opacity:0;animation:petal-fall ${4+Math.random()*5}s ${j*1.8+i*1}s ease-in infinite;`;
+    el.textContent = emoji;
+    PW.appendChild(el);
+  }
+});
+
+/* ── IMAGE LIGHTBOX ── */
+function openLB(src, cap) {
+  const lb = document.getElementById('LIGHTBOX');
+  document.getElementById('LB-IMG').src = src;
+  document.getElementById('LB-CAP').textContent = cap || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB(e) {
+  if (e.target.id === 'LIGHTBOX' || e.target.id === 'LB-CLOSE') {
+    document.getElementById('LIGHTBOX').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('LIGHTBOX').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+/* ── ARCH SUB-TABS ── */
+function archTab(idx) {
+  const panels = document.querySelectorAll('#P-ARCH [data-tab-panel]');
+  const btns = document.querySelectorAll('#ARCH-TABS button');
+  
+  // If panels only 2 (overview + floorplans), map tabs 2 & 3 to show all
+  panels.forEach((p, i) => {
+    if (idx <= 1) {
+      // Show only the matching panel
+      p.classList.toggle('tab-hidden', i !== idx);
+    } else {
+      // Tabs 2,3: show all panels (no extra panels built yet)
+      p.classList.remove('tab-hidden');
+    }
+  });
+  
+  btns.forEach((b, i) => b.classList.toggle('on', i === idx));
+  
+  // Re-init scroll reveal after tab switch
+  setTimeout(initReveal, 80);
+}
+
+/* ── CONTACT FORM ── */
+function submitForm() {
+  const btn = document.getElementById('CF-BTN');
+  const txt = document.getElementById('CF-TXT');
+  const name = document.getElementById('cf-name').value.trim();
+  const tel = document.getElementById('cf-tel').value.trim();
+  const nameEl = document.getElementById('cf-name');
+  const telEl = document.getElementById('cf-tel');
+  let valid = true;
+  [nameEl, telEl].forEach(el => {
+    if (!el.value.trim()) {
+      el.parentElement.style.borderLeft = '2px solid var(--azalea)';
+      el.parentElement.style.background = 'rgba(212,84,122,.04)';
+      setTimeout(() => {
+        el.parentElement.style.borderLeft = '';
+        el.parentElement.style.background = '';
+      }, 2200);
+      valid = false;
+    }
+  });
+  if (!valid) {
+    cDot.style.background = 'var(--sakura-deep)';
+    setTimeout(() => cDot.style.background = 'var(--blue)', 900);
+    return;
+  }
+  btn.classList.add('sent');
+  txt.textContent = '🌸 감사합니다! 24시간 내 전담 컨설턴트가 연락드립니다 ✓';
+}
+</script>
+
+<!-- LIGHTBOX -->
+<div id="LIGHTBOX" onclick="closeLB(event)">
+  <img id="LB-IMG" src="" alt=""/>
+  <button id="LB-CLOSE" onclick="document.getElementById('LIGHTBOX').classList.remove('open')">닫기 ✕</button>
+  <span id="LB-CAP"></span>
+</div>
+</body>
+</html>
